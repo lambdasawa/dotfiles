@@ -1,0 +1,65 @@
+[core]
+  excludesfile = ~/.global_gitignore
+  pager = delta --theme='Monokai Extended'
+
+[user]
+  email = lambdasawa@gmail.com
+  name = Tsubasa Irisawa
+
+[interactive]
+  diffFilter = delta --color-only
+
+[alias]
+  # start a working area (see also: git help tutorial)
+  cl = clone
+  i = init
+
+  # work on the current change (see also: git help everyday)
+  a = add
+  mv = mv
+  rs = restore
+  rm = rm
+  sc = sparse-checkout
+  st = stash
+  cp = cherry-pick
+
+  # examine the history and state (see also: git help revisions)
+  bi = bisect
+  d = diff
+  g = grep
+  l = log
+  sh = show
+  s = status
+  rl = reflog
+  bl = blame
+
+  # grow, mark and tweak your common history
+  c = checkout
+  br = branch
+  cm = commit
+  m = merge
+  rb = rebase
+  rs = reset
+  sw = switch
+  t = tag
+
+  # collaborate (see also: git help workflows)
+  f = fetch
+  pl = pull
+  ps = push
+
+  # util
+  alias = config --get-regexp '^alias\\.'
+  today = log --oneline --since='12 hour ago'
+  graph = log --graph --date=short --pretty='format:%h %cd %cn %d %s'
+
+[ghq]
+  root = ~/src
+
+[secrets]
+  providers = git secrets --aws-provider
+  patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
+  patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
+  patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
+  allowed = AKIAIOSFODNN7EXAMPLE
+  allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY

@@ -1,0 +1,26 @@
+# tmp
+tmp/
+dat/
+
+# log
+log/
+*.log
+
+# build
+dist/
+
+# direnv
+.env
+
+# vscode
+.vscode/
+
+# jetbrains
+.idea/
+*.iml
+
+# Mac
+.DS_Store
+
+# node
+node_modules/

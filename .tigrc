@@ -1,0 +1,74 @@
+# https://github.com/jonas/tig/blob/master/tigrc
+
+# Main settings
+# ----
+
+set wrap-lines = yes
+set tab-size = 2
+set line-graphics = utf-8
+
+set diff-highlight = true
+
+set refresh-mode = after-command
+
+# Key bindings
+# ----
+
+bind generic m view-main
+bind generic d view-diff
+bind generic l view-log
+bind generic b view-refs
+bind generic L view-reflog
+bind generic t view-tree
+bind generic f view-blob
+bind generic r view-refs
+bind generic p view-pager
+bind generic h view-help
+bind generic s view-status
+bind generic c view-stage
+bind generic y view-stash
+bind generic g view-grep
+bind generic r refresh
+
+bind generic j move-down
+bind generic k move-up
+bind generic n move-page-down
+bind generic p move-page-up
+
+bind main    C ?git cherry-pick %(commit)
+bind main    R ?git rebase -i %(commit)
+bind main    ! ?git revert %(commit)
+bind main    F ?git fetch %(remote)
+bind main    P ?git pull %(remote)
+
+bind status  u status-update
+bind status  U status-revert
+bind status  c ?git commit
+bind status  C ?gitmoji -c
+bind status  + ?git commit -v --amend
+bind status  S ?git stash
+bind status  p ?git push
+bind status  P ?gh pr create -w
+bind status  G ?gh pr view -w
+
+bind stage   u status-update
+bind stage   U status-revert
+bind stage   1 stage-update-line
+bind stage   - stage-split-chunk
+
+bind stash   A ?git stash apply %(stash)
+bind stash   P ?git stash pop %(stash)
+bind stash   ! ?git stash drop %(stash)
+
+bind refs    c ?git checkout %(branch)
+bind refs    C !@git checkout -b %(prompt)
+bind refs    D !?@git branch -d %(branch)
+
+bind reflog  C ?git checkout %(branch)
+bind reflog  ! ?git reset --hard %(commit)
+
+# Colors
+# ----
+
+color diff-add-highlight black green bold
+color diff-del-highlight black red bold
