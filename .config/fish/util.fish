@@ -23,7 +23,7 @@ alias v="view"
 alias w="cd-repo"
 alias x="echo __TODO__"
 alias y="echo __TODO__"
-alias z="echo __TODO__"
+# alias z="echo __TODO__"
 
 function reload
     source ~/.config/fish/util.fish
