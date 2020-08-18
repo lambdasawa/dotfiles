@@ -1,0 +1,14 @@
+pre-commit:
+  commands:
+    format-bash:
+      glob: "*.sh"
+      run: ./bin/format-bash.sh
+    format-fish:
+      glob: "*.fish"
+      run: ./bin/format-fish.sh
+
+post-merge:
+  commands:
+    apply:
+      glob: "*"
+      run: ./apply
