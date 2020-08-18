@@ -201,6 +201,10 @@ function git-wrapper
     end
 end
 
+function docker-prune
+    docker system prune --all --force --volumes
+end
+
 function kubectl-use-context
     kubectl config use-context (kubectl config get-contexts --output name | f)
 end
