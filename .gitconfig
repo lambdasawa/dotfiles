@@ -9,6 +9,9 @@
 [interactive]
   diffFilter = delta --color-only
 
+[diff "sopsdiffer"]
+  textconv = "sops -d"
+
 [alias]
   # start a working area (see also: git help tutorial)
   cl = clone
