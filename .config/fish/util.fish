@@ -200,3 +200,7 @@ function git-wrapper
         end
     end
 end
+
+function kubectl-use-context
+    kubectl config use-context (kubectl config get-contexts --output name | f)
+end
