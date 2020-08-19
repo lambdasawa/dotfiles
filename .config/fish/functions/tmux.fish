@@ -1,5 +1,11 @@
 function tmux
-    command -v tmux 2>&1 >/dev/null || brew install tmux
+    if ! has tmux
+        if is-mac
+            brew install tmux
+        else if is-debian
+            sudo apt install -y tmux
+        end
+    end
 
     command tmux $argv
 end
