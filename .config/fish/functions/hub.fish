@@ -1,5 +1,11 @@
 function hub
-    command -v hub 2>&1 >/dev/null || brew install hub
+    if ! has hub
+        if is-mac
+            brew install hub
+        else if is-debian
+            sudo apt install -y hub
+        end
+    end
 
     command hub $argv
 end
