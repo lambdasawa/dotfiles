@@ -7,7 +7,7 @@ function setup-starship
         if is-mac
             brew install starship
         else if is-debian
-            curl -fsSL https://starship.rs/install.sh | bash
+            curl -fsSL https://starship.rs/install.sh | env FORCE=1 bash
         end
     end
 
