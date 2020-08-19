@@ -3,11 +3,11 @@
 ## Usage
 
 ```sh
-git clone git@github.com:lambdasawa/dotfiles.git ~/.dotfiles/ && cd ~/.dotfiles && ./apply
+git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles && cd ~/.dotfiles && ./apply
 ```
 
-## Usage (Vagrant)
+## Usage (Ubuntu in Vagrant)
 
 ```sh
-git clone git@github.com:lambdasawa/dotfiles.git && cd ~/.dotfiles && vagrant up
+git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles && cd ~/.dotfiles/vagrant/ubuntu && vagrant up
 ```
