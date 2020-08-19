@@ -1,5 +1,11 @@
 function convert
-    command -v convert 2>&1 >/dev/null || brew install imagemagick
+    if ! has convert
+        if is-mac
+            brew install imagemagick
+        else if is-debian
+            sudo apt install -y imagemagick
+        end
+    end
 
     command convert $argv
 end
