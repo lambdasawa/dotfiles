@@ -201,6 +201,12 @@ function git-wrapper
     end
 end
 
+function gh-repos
+    hub api "https://api.github.com/users/lambdasawa/repos?per_page=300" | \
+        jq -r '.[] | .ssh_url' | \
+        sed 's/git@github.com://g'
+end
+
 function docker-prune
     docker system prune --all --force --volumes
 end
