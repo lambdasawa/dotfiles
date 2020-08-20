@@ -207,6 +207,11 @@ function gh-repos
         sed 's/git@github.com://g'
 end
 
+function gh-orgs
+    hub api "https://api.github.com/user/orgs" | \
+        jq -r '.[] | .login'
+end
+
 function gh-org-repos -a org
     hub api "https://api.github.com/orgs/$org/repos?per_page=300" | \
         jq -r '.[] | .ssh_url' | \
