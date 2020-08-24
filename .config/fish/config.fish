@@ -69,3 +69,11 @@ function setup-all
 end
 
 setup-all
+
+function play_command_status_sound --on-event fish_postexec
+    if [ $status -eq 0 ]
+        afplay ~/.dotfiles/dat/success.mp3 &
+    else
+        afplay ~/.dotfiles/dat/failure.mp3 &
+    end
+end
