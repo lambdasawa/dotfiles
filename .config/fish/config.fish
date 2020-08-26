@@ -78,6 +78,6 @@ function play_command_status_sound --on-event fish_postexec
         set audio ~/.dotfiles/dat/failure.mp3
     end
     if command -v afplay 2>&1 >/dev/null
-        afplay $audio
+        afplay $audio &
     end
 end
