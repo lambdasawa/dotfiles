@@ -225,3 +225,11 @@ end
 function kubectl-use-context
     kubectl config use-context (kubectl config get-contexts --output name | f)
 end
+
+function ubuntu-vm
+    cd ~/.dotfiles/vagrant/ubuntu/ && vagrant up && vagrant ssh
+end
+
+function kali-vm
+    cd ~/.dotfiles/vagrant/kali/ && vagrant up && vagrant ssh
+end
