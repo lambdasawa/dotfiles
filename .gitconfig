@@ -12,6 +12,9 @@
 [diff "sopsdiffer"]
   textconv = "sops -d"
 
+[pull]
+  rebase = true
+
 [alias]
   # start a working area (see also: git help tutorial)
   cl = clone
