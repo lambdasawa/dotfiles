@@ -4,5 +4,5 @@ windows:
   - main:
       layout: main-vertical
       panes:
-        - git pull && ./apply
+        - git pull && watchexec ./apply
         - sleep 3 && tig

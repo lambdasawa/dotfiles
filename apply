@@ -34,3 +34,5 @@ elif is-debian; then
     sudo apt install -y fish
   fi
 fi
+
+echo "./apply success!"
