@@ -4,5 +4,5 @@ windows:
   - main:
       layout: main-vertical
       panes:
-        - git pull && tokei
+        - git pull && tokei -s lines
         - sleep 3 && tig
