@@ -44,7 +44,7 @@ bind main    P ?git pull %(remote)
 bind status  u status-update
 bind status  U status-revert
 bind status  c ?git commit
-bind status  C ?gitmoji -c
+bind status  C ?fish -c "gitmoji -c"
 bind status  + ?git commit -v --amend
 bind status  S ?git stash
 bind status  p ?git push

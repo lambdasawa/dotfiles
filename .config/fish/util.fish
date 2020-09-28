@@ -23,7 +23,7 @@ alias v="view"
 alias w="cd-repo"
 alias x="echo __TODO__"
 alias y="echo __TODO__"
-alias z="echo __TODO__"
+# alias z="echo __TODO__"
 
 function reload
     source ~/.config/fish/util.fish
@@ -199,4 +199,37 @@ function git-wrapper
                 hub $argv[1..-1]
         end
     end
+end
+
+function gh-repos
+    hub api "https://api.github.com/users/lambdasawa/repos?per_page=300" | \
+        jq -r '.[] | .ssh_url' | \
+        sed 's/git@github.com://g'
+end
+
+function gh-orgs
+    hub api "https://api.github.com/user/orgs" | \
+        jq -r '.[] | .login'
+end
+
+function gh-org-repos -a org
+    hub api "https://api.github.com/orgs/$org/repos?per_page=300" | \
+        jq -r '.[] | .ssh_url' | \
+        sed 's/git@github.com://g'
+end
+
+function docker-prune
+    docker system prune --all --force --volumes
+end
+
+function kubectl-use-context
+    kubectl config use-context (kubectl config get-contexts --output name | f)
+end
+
+function ubuntu-vm
+    cd ~/.dotfiles/vagrant/ubuntu/ && vagrant up && vagrant ssh
+end
+
+function kali-vm
+    cd ~/.dotfiles/vagrant/kali/ && vagrant up && vagrant ssh
 end

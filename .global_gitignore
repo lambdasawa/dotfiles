@@ -24,3 +24,9 @@ dist/
 
 # node
 node_modules/
+
+# ruby
+vendor/
+
+# vagrant
+.vagrant/

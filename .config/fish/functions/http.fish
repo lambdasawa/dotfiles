@@ -1,5 +1,11 @@
 function http
-    command -v http 2>&1 >/dev/null || brew install httpie
+    if ! has http
+        if is-mac
+            brew install httpie
+        else if is-debian
+            sudo apt install -y httpie
+        end
+    end
 
     command http $argv
 end

@@ -1,5 +1,11 @@
 function tig
-    command -v tig 2>&1 >/dev/null || brew install tig
+    if ! has tig
+        if is-mac
+            brew install tig
+        else if is-debian
+            sudo apt install -y tig
+        end
+    end
 
     command tig $argv
 end

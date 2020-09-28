@@ -1,5 +1,11 @@
 function gitmoji
-    command -v gitmoji 2>&1 >/dev/null || brew install gitmoji
+    if ! has gitmoji
+        if is-mac
+            brew install gitmoji
+        else if is-debian
+            npm i -g gitmoji-cli
+        end
+    end
 
     command gitmoji $argv
 end
