@@ -25,6 +25,8 @@ alias x="echo __TODO__"
 alias y="echo __TODO__"
 # alias z="echo __TODO__"
 
+alias rm="gomi"
+
 function reload
     source ~/.config/fish/util.fish
     echo 'Reload success.'
