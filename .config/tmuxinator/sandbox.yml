@@ -1,0 +1,8 @@
+name: sandbox
+root: ~/src/github.com/lambdasawa/sandbox
+windows:
+  - main:
+      layout: main-vertical
+      panes:
+        - exec fish
+        - sleep 3 && tig

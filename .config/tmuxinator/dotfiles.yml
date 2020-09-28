@@ -1,0 +1,8 @@
+name: dotfiles
+root: ~/.dotfiles
+windows:
+  - main:
+      layout: main-vertical
+      panes:
+        - git pull && ./apply
+        - sleep 3 && tig
