@@ -21,13 +21,14 @@ if is-mac; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   fi
 
-  brew update
+  brew upgrade
 
   if ! command -v fish; then
     brew install fish
   fi
 elif is-debian; then
   sudo apt update -y
+  sudo apt upgrade -y
 
   if ! command -v fish; then
     sudo apt install -y fish
