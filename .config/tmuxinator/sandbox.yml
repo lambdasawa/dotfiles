@@ -4,5 +4,5 @@ windows:
   - main:
       layout: main-vertical
       panes:
-        - exec fish
+        - git pull && tokei
         - sleep 3 && tig
