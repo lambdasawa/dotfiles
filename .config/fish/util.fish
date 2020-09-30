@@ -48,7 +48,7 @@ function cd-repo
 end
 
 function list-files
-    exa -laB --git
+    exa -laB --git $argv
 end
 
 function tree-files
