@@ -45,7 +45,7 @@ style             = "bold white"
 symbol = ""
 
 [git_status]
-format     = "[$all_status](bold yellow)"
+format     = "[$all_status$ahead_behind](bold yellow)"
 ahead      = "ahead "
 behind     = "behind "
 conflicted = "conflicted "
