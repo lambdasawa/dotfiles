@@ -235,6 +235,14 @@ function kubectl-use-context
     kubectl config use-context (kubectl config get-contexts --output name | f)
 end
 
+function enable-fish-postexec-sound
+    touch ~/.enable_fish_postexec_sound
+end
+
+function disable-fish-postexec-sound
+    rm -f ~/.enable_fish_postexec_sound
+end
+
 function ubuntu-vm
     cd ~/.dotfiles/vagrant/ubuntu/ && vagrant up && vagrant ssh
 end
