@@ -3,5 +3,5 @@ function firefox
         brew cask install firefox
     end
 
-    open /Applications/Firefox.app
+    open /Applications/Firefox.app $argv
 end
