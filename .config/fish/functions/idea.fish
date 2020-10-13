@@ -1,7 +1,7 @@
 function idea
     if [ -e /usr/local/bin/idea ]
         # Create Command-Line Launcher ...
-        /usr/local/bin/idea $argv
+        /usr/bin/python /usr/local/bin/idea $argv
         return
     end
 
