@@ -259,6 +259,9 @@ bind ,y youtubedl
 # find feed
 bind ,f rssexec
 
+# oyahura mode
+bind C composite rot13; js document.querySelectorAll('img').forEach(e => { e.src = `https://placekitten.com/${e.width}/${e.height}` })
+
 ################################################################################
 #### Hook ######################################################################
 ################################################################################
