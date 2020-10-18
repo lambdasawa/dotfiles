@@ -6,12 +6,17 @@ export PATH=$PATH:$HOME/bin
 
 mkdir -p ~/src ~/bin ~/opt ~/tmp
 
+mkdir -p ~/src/github.com/lambdasawa
+rm -f ~/src/github.com/lambdasawa/dotfiles
+ln -sf $HOME/.dotfiles $HOME/src/github.com/lambdasawa/
+mv $HOME/src/github.com/lambdasawa/.dotfiles $HOME/src/github.com/lambdasawa/dotfiles
+
 for path in $(find ./bin -type f | grep -v '.sh$'); do
   mkdir -p $HOME/$(dirname $path)
   ln -sf $PWD/$path $HOME/$path
 done
 
-for path in $(find . -type f | grep -v '.git/' | grep -e '^\./\.'); do
+for path in $(find . -type f | grep -v '.git/' | grep -v 'dotfiles' | grep -e '^\./\.'); do
   mkdir -p $HOME/$(dirname $path)
   ln -sf $PWD/$path $HOME/$path
 done
