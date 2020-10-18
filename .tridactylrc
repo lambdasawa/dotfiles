@@ -1,0 +1,279 @@
+################################################################################
+#### Document ##################################################################
+################################################################################
+#
+# default setting.
+# https://github.com/tridactyl/tridactyl/blob/af61d8a42e55fa8590ef91e90f474528bcd82ba5/src/config.ts#L34
+#
+# examples.
+# https://github.com/tridactyl/tridactyl/wiki/Exemplar-.tridactylrc-files
+#
+# themes.
+# https://github.com/tridactyl/tridactyl/tree/master/src/static/themes
+#
+
+################################################################################
+#### Basic #####################################################################
+################################################################################
+
+# wipe settings
+sanitize tridactyllocal tridactylsync
+
+set newtab https://jp.inoreader.com
+
+set hintchars jfkdhglsamvurceixwozqp
+
+set smoothscroll true
+
+set findcase smart
+
+set editorcmd code --wait
+
+set rsscmd open %u
+
+colors my
+
+################################################################################
+#### Command ###################################################################
+################################################################################
+
+# TODO: use -p or -r option
+
+command gitlclone js \
+  const uri = document.location.href.replace(/https:\/\/github.com\/([^\/]+)\/([^\/]+)/, 'git@github.com:$1/$2.git'); \
+  const cmd = `ghq get ${uri}`; \
+  tri.native.run(cmd) \
+    .then(result => { alert([`$ ${cmd}`, `Exit code: ${result.code}`, result.content].join('\n')); console.log(cmd, result) }) \
+    .catch(e => { alert(cmd, e); console.error(cmd, result) });
+
+command openvscode js \
+  const uri = document.location.href.replace(/https:\/\/github.com\/([^\/]+)\/([^\/]+)/, '~/src/github.com/$1/$2'); \
+  const cmd = `code -r ${uri}`; \
+  tri.native.run(cmd) \
+    .then(result => { alert([`$ ${cmd}`, `Exit code: ${result.code}`, result.content].join('\n')); console.log(cmd, result) }) \
+    .catch(e => { alert(cmd, e); console.error(cmd, result) });
+
+command opentwitterintent js \
+  const text = encodeURIComponent(`${location.href} ${document.title}`); \
+  window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank')
+
+command youtubedl js \
+  const cmd = `cd ~/Downloads && youtube-dl -f mp4 ${location.href}`; \
+  alert(`Start command: ${cmd}`); \
+  tri.native.run(cmd) \
+    .then(result => { alert([`$ ${cmd}`, `Exit code: ${result.code}`, result.content].join('\n')); console.log(cmd, result) }) \
+    .catch(e => { alert(cmd, e); console.error(cmd, result) });
+
+command on_open_www_inoreader js tri.excmds.urlmodify('-t', 'www.inoreader.com', 'jp.inoreader.com')
+
+command on_open_inoreader_bookmarklet js -p setInterval( \
+  () => { \
+    if (document.title.search("完了") !== -1) { \
+      tri.excmds.tabclose(JS_ARG); \
+    }; \
+    \
+    const button = document.getElementById('submit_button'); \
+    if (button) { \
+      button.click(); \
+      button.disabled = true; \
+    }; \
+  }, \
+  100 \
+) \
+
+################################################################################
+#### Shortcut  #################################################################
+################################################################################
+
+# reset all
+unbind <F1>
+unbind o
+unbind O
+unbind w
+unbind W
+unbind t
+unbind ]]
+unbind [[
+unbind [c
+unbind ]c
+unbind <c-x>
+unbind <c-a>
+unbind T
+unbind yy
+unbind ys
+unbind yc
+unbind gh
+unbind gH
+unbind p
+unbind P
+unbind j
+unbind <c-e>
+unbind k
+unbind <c-y>
+unbind h
+unbind l
+unbind G
+unbind gg
+unbind <c-u>
+unbind <c-d>
+unbind $
+unbind ^
+unbind <c-6>
+unbind H
+unbind L
+unbind <c-i>
+unbind <c-o>
+unbind D
+unbind d
+unbind gx$
+unbind gx0
+unbind r
+unbind u
+unbind gi
+unbind R
+unbind gt
+unbind g;
+unbind g^
+unbind gT
+unbind g$
+unbind g0
+unbind gu
+unbind gr
+unbind gf
+unbind gU
+unbind s
+unbind :
+unbind M
+unbind S
+unbind ZZ
+unbind b
+unbind F
+unbind f
+unbind ;I
+unbind ;i
+unbind ;y
+unbind ;k
+unbind ;P
+unbind ;p
+unbind ;s
+unbind ;r
+unbind ;a
+unbind ;S
+unbind ;;
+unbind ;A
+unbind ;v
+unbind ;#
+unbind <S-Insert>
+unbind ;w
+unbind <CA-`>
+unbind <CA-Esc>
+unbind a
+unbind I
+unbind zi
+unbind A
+unbind zz
+unbind zo
+unbind <SA-ArrowUp><SA-ArrowUp><SA-ArrowDown><SA-ArrowDown><SA-ArrowLeft><SA-ArrowRight><SA-ArrowLeft><SA-ArrowRight>ba
+unbind .
+
+unbind /
+
+# mode
+bind I mode ignore
+
+# cmd
+bind x fillcmdline_notrail
+
+# move page
+bind f hint
+bind F hint -b
+
+# save page
+bind i js tri.excmds.tabopen('-b', `https://jp.inoreader.com/bookmarklet/save_web_page/${encodeURIComponent(location.href)}`)
+
+# scroll
+bind j scrollline 10
+bind k scrollline -10
+bind G scrollto 100
+bind gg scrollto 0
+
+# find
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
+
+# tab move
+bind J tabnext
+bind K tabprev
+bind b fillcmdline buffer
+
+# new tab
+bind o fillcmdline open
+bind t fillcmdline tabopen
+bind s fillcmdline open search
+bind S fillcmdline tabopen search
+bind p clipboard open
+bind P clipboard tabopen
+
+# close tab
+bind d tabclose
+
+# pin tab
+bind p pin
+
+# history
+bind H back
+bind L forward
+
+# reload page
+bind r reload
+bind R reloadhard
+
+# zoom
+bind zi zoom 0.1 true
+bind zo zoom -0.1 true
+bind zz zoom 1
+
+# edit
+bind e editor
+
+# reload settings
+bind ,r composite js console.log('tridactylrc loading...'); source; js console.log('tridactylrc loaded!')
+
+# test js
+bind ,x js alert('~/.trydactylrc loaded!')
+
+# exec git clone at github
+bind ,g gitclone
+
+# open vscode at github
+bind ,e openvscode
+
+# open twitter share link
+bind ,t opentwitterintent
+
+# exec youtube-dl
+bind ,y youtubedl
+
+# find feed
+bind ,f rssexec
+
+################################################################################
+#### Hook ######################################################################
+################################################################################
+
+# disable tridactyl shortcut at gmail
+autocmd DocStart ^https://mail.google.com mode ignore
+
+# disable tridactyl shortcut at tweetdeck
+autocmd DocStart ^https://tweetdeck.twitter.com mode ignore
+
+# disable tridactyl shortcut at inoreader
+autocmd DocStart ^https://jp.inoreader.com mode ignore
+
+# redirect inoreader from www to jp
+autocmd DocStart ^https://www.inoreader.com on_open_www_inoreader
+
+# auto click save button in inoreader bookmarklet page
+autocmd DocStart ^https://jp.inoreader.com/bookmarklet/save_web_page composite echo TRI_FIRED_TRI_TABINDEX | on_open_inoreader_bookmarklet
