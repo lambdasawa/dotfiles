@@ -39,7 +39,7 @@ colors my
 
 # TODO: use -p or -r option
 
-command gitlclone js \
+command gitclone js \
   const uri = document.location.href.replace(/https:\/\/github.com\/([^\/]+)\/([^\/]+)/, 'git@github.com:$1/$2.git'); \
   const cmd = `ghq get ${uri}`; \
   tri.native.run(cmd) \
@@ -204,8 +204,8 @@ bind n findnext 1
 bind N findnext -1
 
 # tab move
-bind J tabnext
-bind K tabprev
+bind h tabprev
+bind l tabnext
 bind b fillcmdline buffer
 
 # new tab
