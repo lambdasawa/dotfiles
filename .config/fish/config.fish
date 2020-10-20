@@ -6,6 +6,10 @@ end
 
 set -gx PATH $PATH $HOME/bin
 
+if [ -e ~/.local/bin ]
+    set -gx PATH $PATH ~/.local/bin
+end
+
 function setup-starship
     if ! command -v starship 2>&1 >/dev/null
         if is-mac
