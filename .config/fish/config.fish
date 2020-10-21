@@ -75,12 +75,13 @@ end
 setup-all
 
 function play_command_status_sound --on-event fish_postexec
+    set s $status
     if [ ! -e ~/.enable_fish_postexec_sound ]
         return
     end
 
     set audio ""
-    if [ $status -eq 0 ]
+    if [ $s -eq 0 ]
         set audio ~/.dotfiles/dat/success.mp3
     else
         set audio ~/.dotfiles/dat/failure.mp3
