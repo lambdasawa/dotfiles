@@ -1,5 +1,9 @@
 set -gx EDITOR "code --wait"
 
+if [ -e /Applications/Firefox.app/Contents/MacOS/firefox ]
+    set -gx BROWSER /Applications/Firefox.app/Contents/MacOS/firefox
+end
+
 set -gx PATH $PATH $HOME/bin
 
 function setup-starship
