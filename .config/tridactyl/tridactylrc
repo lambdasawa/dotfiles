@@ -35,49 +35,17 @@ colors my
 #### Command ###################################################################
 ################################################################################
 
-# TODO: use -p or -r option
+command gitclone js -r js/git-clone.js
 
-command gitclone js \
-  const uri = document.location.href.replace(/https:\/\/github.com\/([^\/]+)\/([^\/]+)/, 'git@github.com:$1/$2.git'); \
-  const cmd = `ghq get ${uri}`; \
-  tri.native.run(cmd) \
-    .then(result => { alert([`$ ${cmd}`, `Exit code: ${result.code}`, result.content].join('\n')); console.log(cmd, result) }) \
-    .catch(e => { alert(cmd, e); console.error(cmd, result) });
+command openvscode js -r js/open-vs-code.js
 
-command openvscode js \
-  const uri = document.location.href.replace(/https:\/\/github.com\/([^\/]+)\/([^\/]+)/, '~/src/github.com/$1/$2'); \
-  const cmd = `code -r ${uri}`; \
-  tri.native.run(cmd) \
-    .then(result => { alert([`$ ${cmd}`, `Exit code: ${result.code}`, result.content].join('\n')); console.log(cmd, result) }) \
-    .catch(e => { alert(cmd, e); console.error(cmd, result) });
+command opentwitterintent js -r js/open-twitter-intent.js
 
-command opentwitterintent js \
-  const text = encodeURIComponent(`${location.href} ${document.title}`); \
-  window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank')
+command youtubedl js -r js/youtube-dl.js
 
-command youtubedl js \
-  const cmd = `cd ~/Downloads && youtube-dl -f mp4 ${location.href}`; \
-  alert(`Start command: ${cmd}`); \
-  tri.native.run(cmd) \
-    .then(result => { alert([`$ ${cmd}`, `Exit code: ${result.code}`, result.content].join('\n')); console.log(cmd, result) }) \
-    .catch(e => { alert(cmd, e); console.error(cmd, result) });
+command on_open_www_inoreader js -r js/on-open-www-inoreader.js
 
-command on_open_www_inoreader js tri.excmds.urlmodify('-t', 'www.inoreader.com', 'jp.inoreader.com')
-
-command on_open_inoreader_bookmarklet js -p setInterval( \
-  () => { \
-    if (document.title.search("完了") !== -1) { \
-      tri.excmds.tabclose(JS_ARG); \
-    }; \
-    \
-    const button = document.getElementById('submit_button'); \
-    if (button) { \
-      button.click(); \
-      button.disabled = true; \
-    }; \
-  }, \
-  100 \
-) \
+command on_open_inoreader_bookmarklet js -p -r js/on-open-inoreader-bookmarklet.js
 
 ################################################################################
 #### Shortcut  #################################################################
