@@ -1,3 +1,15 @@
+:root.TridactylOwnNamespace.TridactylThemeMy {
+  --tridactyl-fg: #d0d0d0;
+  --tridactyl-bg: #202020;
+
+  --tridactyl-highlight-box-fg: #d0d0d0;
+  --tridactyl-highlight-box-bg: #202020;
+}
+
+:root.TridactylOwnNamespace.TridactylThemeMy a {
+  color: royalblue;
+}
+
 :root.TridactylThemeMy #cmdline_iframe {
   position: fixed !important;
   top: 25% !important;

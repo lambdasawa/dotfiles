@@ -19,8 +19,6 @@
 # wipe settings
 sanitize tridactyllocal tridactylsync
 
-set newtab https://jp.inoreader.com
-
 set hintchars jfkdhglsamvurceixwozqp
 
 set smoothscroll true
