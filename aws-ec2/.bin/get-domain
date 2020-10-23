@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -xe
+
+id=$(.bin/get-instance-id)
+
+aws ec2 describe-instances \
+  --instance-ids $(
+    aws cloudformation describe-stacks --stack-name LambDotfilesEc2Stack |
+      jq -r ".Stacks[] | .Outputs[] | select(.OutputKey | contains(\"BastionHost\")) | .OutputValue"
+  ) |
+  jq -r ".Reservations[] | .Instances[] | select(.InstanceId == \"$id\") | .PublicDnsName"
