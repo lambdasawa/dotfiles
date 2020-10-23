@@ -3,17 +3,31 @@
 ## Usage
 
 ```sh
-git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles && cd ~/.dotfiles && ./apply
+git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles &&\
+  cd ~/.dotfiles &&\
+  ./apply
+```
+
+## Usage (Ubuntu in AWS EC2)
+
+```sh
+git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles &&\
+   cd ~/.dotfiles/aws-2c2 &&
+   make
 ```
 
 ## Usage (Ubuntu in Vagrant)
 
 ```sh
-git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles && cd ~/.dotfiles/vagrant/ubuntu && vagrant up
+git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles &&\
+  cd ~/.dotfiles/vagrant/ubuntu &&\
+  vagrant up
 ```
 
 ## Usage (Kali Linux in Vagrant)
 
 ```sh
-git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles && cd ~/.dotfiles/vagrant/kali && vagrant up
+git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles &&\
+  cd ~/.dotfiles/vagrant/kali &&\
+  vagrant up
 ```
