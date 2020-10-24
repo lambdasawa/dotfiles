@@ -16,7 +16,7 @@ for path in $(find ./bin -type f | grep -v '.sh$'); do
   ln -sf $PWD/$path $HOME/$path
 done
 
-for path in $(find . -type f | grep -v '.git/' | grep -v 'dotfiles' | grep -e '^\./\.'); do
+for path in $(find . -type f | grep -v '.git/' | grep -e '^\./\.'); do
   mkdir -p $HOME/$(dirname $path)
   ln -sf $PWD/$path $HOME/$path
 done
