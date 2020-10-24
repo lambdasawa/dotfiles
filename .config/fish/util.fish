@@ -97,6 +97,10 @@ function git-reflog
     git reflog | filter | awk '{print $1}'
 end
 
+function git-remote-ssh-style
+    git remote set-url origin git@github.com:(basename (realpath ..))/(basename $PWD).git
+end
+
 function git-checkout
     git checkout (git-branch)
 end
