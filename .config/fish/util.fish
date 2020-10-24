@@ -231,6 +231,10 @@ function docker-prune
     docker system prune --all --force --volumes
 end
 
+function aws-whoami
+    aws iam get-user || aws sts get-caller-identity
+end
+
 function kubectl-use-context
     kubectl config use-context (kubectl config get-contexts --output name | f)
 end
