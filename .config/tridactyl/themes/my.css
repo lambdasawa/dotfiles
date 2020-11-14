@@ -1,0 +1,73 @@
+:root.TridactylOwnNamespace.TridactylThemeMy {
+  --tridactyl-fg: #d0d0d0;
+  --tridactyl-bg: #202020;
+
+  --tridactyl-highlight-box-fg: #d0d0d0;
+  --tridactyl-highlight-box-bg: #202020;
+}
+
+:root.TridactylOwnNamespace.TridactylThemeMy a {
+  color: royalblue;
+}
+
+:root.TridactylThemeMy #cmdline_iframe {
+  position: fixed !important;
+  top: 25% !important;
+  bottom: unset !important;
+  left: 5% !important;
+
+  width: 90% !important;
+
+  z-index: 2147483647 !important;
+
+  background-color: dimgray;
+  color: white;
+
+  border: 4px solid black;
+
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 64px !important;
+}
+
+:root.TridactylThemeMy #command-line-holder {
+  order: 1;
+
+  background-color: dimgray !important;
+  color: white !important;
+}
+
+:root.TridactylThemeMy #command-line-holder #tridactyl-colon {
+  font-family: "JetBrains Mono", sans-serif !important;
+}
+
+:root.TridactylThemeMy #command-line-holder #tridactyl-input {
+  background-color: dimgray !important;
+  color: white !important;
+
+  font-family: "JetBrains Mono", sans-serif !important;
+}
+
+:root.TridactylThemeMy #command-line-holder input {
+  outline: none;
+}
+
+:root.TridactylThemeMy #completions {
+  order: 2;
+  overflow: hidden;
+
+  background-color: dimgray;
+  color: white;
+
+  border-top: unset !important;
+
+  font-family: "JetBrains Mono", sans-serif !important;
+}
+
+:root.TridactylThemeMy #completions .sectionHeader {
+  visibility: hidden;
+  height: 0px;
+}
+
+:root.TridactylThemeMy #completions .content .url {
+  background-color: dimgray;
+  color: white;
+}

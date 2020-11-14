@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -xe
+
+domain=$(.bin/get-domain)
+echo "#### Domain: $domain"
+
+instance_id=$(.bin/get-instance-id)
+echo "#### Instance ID: $instance_id"
+
+if ! cat ~/.ssh/config | grep "Include config_lamb-sbx-ec2"; then
+  cat <(echo "Include config_lamb-sbx-ec2") <(cat ~/.ssh/config) | sponge ~/.ssh/config
+  echo " #### Add Include statement to ~/.ssh/config."
+fi
+
+echo "Host lamb-sbx-ec2
+  HostName     $domain
+  Port         22
+  User         ubuntu
+  IdentityFile $HOME/.ssh/id_rsa" >~/.ssh/config_lamb-sbx-ec2
+echo "#### Create config to ~/.ssh/config_lamb-sbx-ec2."
+
+aws ec2-instance-connect send-ssh-public-key \
+  --instance-id $instance_id \
+  --instance-os-user ubuntu \
+  --ssh-public-key file://$HOME/.ssh/id_rsa.pub \
+  --availability-zone "$AWS_AVAILABILITY_ZONE"
+echo "#### Send SSH public key."
+
+echo "#### ssh -v lamb-sbx-ec2"

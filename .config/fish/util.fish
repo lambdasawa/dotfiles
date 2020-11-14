@@ -25,6 +25,8 @@ alias x="echo __TODO__"
 alias y="echo __TODO__"
 # alias z="echo __TODO__"
 
+alias rm="gomi"
+
 function reload
     source ~/.config/fish/util.fish
     echo 'Reload success.'
@@ -46,7 +48,7 @@ function cd-repo
 end
 
 function list-files
-    exa -laB --git
+    exa -laB --git $argv
 end
 
 function tree-files
@@ -93,6 +95,10 @@ end
 
 function git-reflog
     git reflog | filter | awk '{print $1}'
+end
+
+function git-remote-ssh-style
+    git remote set-url origin git@github.com:(basename (realpath ..))/(basename $PWD).git
 end
 
 function git-checkout
@@ -186,6 +192,13 @@ function now
     date '+%Y-%m-%d-%H-%M-%S'
 end
 
+function random -a n
+    if [ -z "$n" ]
+        set n 128
+    end
+    ruby -e "require 'securerandom' ; puts SecureRandom.alphanumeric($n)"
+end
+
 function git-wrapper
     set argc (count $argv)
 
@@ -218,12 +231,35 @@ function gh-org-repos -a org
         sed 's/git@github.com://g'
 end
 
+function gh-repo-create
+    gh repo create --private (basename (realpath ..))/(basename $PWD)
+    git-remote-ssh-style
+    set name (basename $PWD)
+    echo "# $name" >README.md
+    git add README.md
+    gitmoji -c
+    git push -u origin master
+    gh repo view -w
+end
+
 function docker-prune
     docker system prune --all --force --volumes
 end
 
+function aws-whoami
+    aws iam get-user || aws sts get-caller-identity
+end
+
 function kubectl-use-context
     kubectl config use-context (kubectl config get-contexts --output name | f)
+end
+
+function enable-fish-postexec-sound
+    touch ~/.enable_fish_postexec_sound
+end
+
+function disable-fish-postexec-sound
+    rm -f ~/.enable_fish_postexec_sound
 end
 
 function ubuntu-vm

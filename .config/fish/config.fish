@@ -1,6 +1,14 @@
 set -gx EDITOR "code --wait"
 
+if [ -e /Applications/Firefox.app/Contents/MacOS/firefox ]
+    set -gx BROWSER /Applications/Firefox.app/Contents/MacOS/firefox
+end
+
 set -gx PATH $PATH $HOME/bin
+
+if [ -e ~/.local/bin ]
+    set -gx PATH $PATH ~/.local/bin
+end
 
 function setup-starship
     if ! command -v starship 2>&1 >/dev/null
@@ -71,15 +79,22 @@ end
 setup-all
 
 function play_command_status_sound --on-event fish_postexec
+    set s $status
+    if [ ! -e ~/.enable_fish_postexec_sound ]
+        return
+    end
+
     set audio ""
-    if [ $status -eq 0 ]
+    if [ $s -eq 0 ]
         set audio ~/.dotfiles/dat/success.mp3
     else
         set audio ~/.dotfiles/dat/failure.mp3
     end
+    if [ ! -e $audio ]
+        return
+    end
+
     if command -v afplay 2>&1 >/dev/null
-        if [ -e $audio ]
-            afplay $audio &
-        end
+        afplay $audio &
     end
 end

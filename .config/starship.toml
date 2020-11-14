@@ -1,33 +1,35 @@
-prompt_order = [
-  "username",
-  "hostname",
-  "directory",
-  "aws",
-  "kubernetes",
-  "python",
-  "ruby",
-  "nodejs",
-  "java",
-  "dotnet",
-  "golang",
-  "rust",
-  "env_var",
-  "cmd_duration",
-  "time",
-  "git_branch",
-  "git_commit",
-  "git_state",
-  "git_status",
-  "hg_branch",
-  "line_break",
-  "jobs",
-  "battery",
-  "memory_usage",
-  "character",
-]
+format = """\
+  $username\
+  $hostname\
+  $directory\
+  $aws\
+  $kubernetes\
+  $python\
+  $ruby\
+  $nodejs\
+  $java\
+  $dotnet\
+  $golang\
+  $rust\
+  $env_var\
+  $cmd_duration\
+  $time\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_status\
+  $hg_branch\
+  $line_break\
+  $jobs\
+  $battery\
+  $memory_usage\
+  $character\
+"""
 
 [character]
-symbol = "g9v9g"
+success_symbol = "[g9v9g](bold green)"
+error_symbol = "[g9v9g](bold red)"
+vicmd_symbol = "[g9v9g](bold green)"
 
 [time]
 disabled        = false
@@ -43,17 +45,16 @@ style             = "bold white"
 symbol = ""
 
 [git_status]
+format     = "[$all_status$ahead_behind](bold yellow)"
 ahead      = "ahead "
 behind     = "behind "
 conflicted = "conflicted "
 deleted    = "deleted "
 diverged   = "diverged "
 modified   = "modified "
-prefix     = ""
 renamed    = "renamed "
 staged     = "staged "
 stashed    = "stashed "
-suffix     = " "
 untracked  = "untracked "
 
 [aws.region_aliases]
