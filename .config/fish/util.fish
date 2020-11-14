@@ -242,6 +242,10 @@ function gh-repo-create
     gh repo view -w
 end
 
+function op-sigin
+    eval (op signin my lambdasawa@gmail.com)
+end
+
 function docker-prune
     docker system prune --all --force --volumes
 end
