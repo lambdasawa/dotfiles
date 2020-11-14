@@ -3,7 +3,7 @@
 ## Usage
 
 ```sh
-git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles &&\
+git clone https://github.com/lam-sbx/dotfiles ~/.dotfiles &&\
   cd ~/.dotfiles &&\
   ./apply
 ```
@@ -11,7 +11,7 @@ git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles &&\
 ## Usage (Ubuntu in AWS EC2)
 
 ```sh
-git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles &&\
+git clone https://github.com/lam-sbx/dotfiles ~/.dotfiles &&\
    cd ~/.dotfiles/aws-2c2 &&
    make
 ```
@@ -19,7 +19,7 @@ git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles &&\
 ## Usage (Ubuntu in Vagrant)
 
 ```sh
-git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles &&\
+git clone https://github.com/lam-sbx/dotfiles ~/.dotfiles &&\
   cd ~/.dotfiles/vagrant/ubuntu &&\
   vagrant up
 ```
@@ -27,7 +27,7 @@ git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles &&\
 ## Usage (Kali Linux in Vagrant)
 
 ```sh
-git clone https://github.com/lambdasawa/dotfiles ~/.dotfiles &&\
+git clone https://github.com/lam-sbx/dotfiles ~/.dotfiles &&\
   cd ~/.dotfiles/vagrant/kali &&\
   vagrant up
 ```

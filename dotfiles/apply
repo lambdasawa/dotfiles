@@ -9,7 +9,7 @@ mkdir -p ~/src ~/bin ~/opt ~/tmp
 mkdir -p ~/src/github.com/lamb-sbx
 rm -f ~/src/github.com/lamb-sbx/dotfiles
 ln -sf $HOME/.dotfiles $HOME/src/github.com/lamb-sbx/
-mv $HOME/src/github.com/lamb-sbx/.dotfiles $HOME/src/github.com/lamb-sbx/dotfiles
+mv $HOME/src/github.com/lam-sbx/.dotfiles $HOME/src/github.com/lamb-sbx/dotfiles
 
 for path in $(find ./bin -type f | grep -v '.sh$'); do
   mkdir -p $HOME/$(dirname $path)
