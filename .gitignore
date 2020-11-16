@@ -1,0 +1,5 @@
+# dotenv, direnv
+.env
+
+# Vagrant
+.vagrant

@@ -1,32 +1,12 @@
-# tmp
-tmp/
-dat/
+# Personal
+.opt
 
-# log
-log/
-*.log
-
-# build
-dist/
-
-# direnv
-.env
-
-# vscode
+# Visual Studio Code
 .vscode/
 
-# jetbrains
+# JetBrains
 .idea/
 *.iml
 
 # Mac
 .DS_Store
-
-# node
-node_modules/
-
-# ruby
-vendor/
-
-# vagrant
-.vagrant/
