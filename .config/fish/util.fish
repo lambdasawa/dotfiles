@@ -254,6 +254,10 @@ function aws-whoami
     aws iam get-user || aws sts get-caller-identity
 end
 
+function gcloud-project-select
+    gcloud projects list | f | awk '{print $1}'
+end
+
 function kubectl-use-context
     kubectl config use-context (kubectl config get-contexts --output name | f)
 end
