@@ -242,7 +242,7 @@ function gh-repo-create
     gh repo view -w
 end
 
-function op-sigin
+function op-signin
     eval (op signin my lambdasawa@gmail.com)
 end
 
