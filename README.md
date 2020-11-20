@@ -3,31 +3,23 @@
 ## Usage
 
 ```sh
-git clone https://github.com/lam-sbx/dotfiles ~/.dotfiles &&\
-  cd ~/.dotfiles &&\
-  ./apply
+cd ~ && git clone https://github.com/lamb-sbx/dotfiles ~/.dotfiles && make
 ```
 
 ## Usage (Ubuntu in AWS EC2)
 
 ```sh
-git clone https://github.com/lam-sbx/dotfiles ~/.dotfiles &&\
-   cd ~/.dotfiles/aws-2c2 &&
-   make
+cd ~ && git clone https://github.com/lamb-sbx/dotfiles ~/.dotfiles && make start-aws-ec2
 ```
 
 ## Usage (Ubuntu in Vagrant)
 
 ```sh
-git clone https://github.com/lam-sbx/dotfiles ~/.dotfiles &&\
-  cd ~/.dotfiles/vagrant/ubuntu &&\
-  vagrant up
+cd ~ && git clone https://github.com/lamb-sbx/dotfiles ~/.dotfiles && make start-vagrant
 ```
 
 ## Usage (Kali Linux in Vagrant)
 
 ```sh
-git clone https://github.com/lam-sbx/dotfiles ~/.dotfiles &&\
-  cd ~/.dotfiles/vagrant/kali &&\
-  vagrant up
+cd ~ && git clone https://github.com/lamb-sbx/dotfiles ~/.dotfiles && make start-vagrant-kali
 ```

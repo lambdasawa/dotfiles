@@ -73,7 +73,7 @@ export class EC2Stack extends cdk.Stack {
       "sudo snap refresh",
       "sudo snap install starship",
       `su ubuntu -c '${[
-        "git clone https://github.com/lam-sbx/dotfiles /home/ubuntu/.dotfiles",
+        "git clone https://github.com/lamb-sbx/dotfiles /home/ubuntu/.dotfiles",
         "cd /home/ubuntu/.dotfiles",
         "git checkout dev",
         "./apply",
