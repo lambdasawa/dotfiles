@@ -80,21 +80,18 @@ setup-all
 
 function play_command_status_sound --on-event fish_postexec
     set s $status
+
     if [ ! -e ~/.enable_fish_postexec_sound ]
         return
     end
 
-    set audio ""
-    if [ $s -eq 0 ]
-        set audio ~/.dotfiles/dat/success.mp3
-    else
-        set audio ~/.dotfiles/dat/failure.mp3
-    end
-    if [ ! -e $audio ]
+    if ! command -v gundoud 2>&1 >/dev/null
         return
     end
 
-    if command -v afplay 2>&1 >/dev/null
-        afplay $audio &
+    if [ $s -eq 0 ]
+        gundoud event command success 2>&1 >/dev/null &
+    else
+        gundoud event command failure 2>&1 >/dev/null &
     end
 end
