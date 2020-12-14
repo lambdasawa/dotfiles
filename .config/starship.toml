@@ -57,11 +57,16 @@ staged     = "staged "
 stashed    = "stashed "
 untracked  = "untracked "
 
+[aws]
+format = "[AWS:$profile/$region]($style) "
+
 [aws.region_aliases]
 ap-northeast-1 = "AN1"
 us-east-1      = "UE1"
 
+[gcloud]
+format = "[GCP:$project]($style) "
+
 [kubernetes]
+format = "[Kube:$context/$namespace]($style) "
 disabled = false
-style    = "blue"
-symbol   = ""
