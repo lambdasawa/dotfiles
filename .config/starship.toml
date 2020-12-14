@@ -2,15 +2,6 @@ format = """\
   $username\
   $hostname\
   $directory\
-  $aws\
-  $kubernetes\
-  $python\
-  $ruby\
-  $nodejs\
-  $java\
-  $dotnet\
-  $golang\
-  $rust\
   $env_var\
   $cmd_duration\
   $time\
@@ -19,10 +10,21 @@ format = """\
   $git_state\
   $git_status\
   $hg_branch\
-  $line_break\
   $jobs\
   $battery\
   $memory_usage\
+  $line_break\
+  $aws\
+  $gcloud\
+  $kubernetes\
+  $python\
+  $ruby\
+  $nodejs\
+  $java\
+  $dotnet\
+  $golang\
+  $rust\
+  $line_break\
   $character\
 """
 
