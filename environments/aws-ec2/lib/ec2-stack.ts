@@ -36,6 +36,10 @@ export class EC2Stack extends cdk.Stack {
       ec2.Peer.ipv4(EC2Stack.buildSshCidr(props)),
       ec2.Port.tcp(22)
     );
+    securityGroup.addIngressRule(
+      ec2.Peer.ipv4(EC2Stack.buildSshCidr(props)),
+      ec2.Port.tcpRange(8000, 9000)
+    );
 
     return securityGroup;
   }
