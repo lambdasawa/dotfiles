@@ -16,8 +16,8 @@ export class EC2Stack extends cdk.Stack {
     if (!props) throw new Error("Props is empty.");
 
     const vpc = this.useVPC();
-    this.buildSecurityGroup(props, vpc);
-    this.buildHost(props, vpc);
+    const securityGroup = this.buildSecurityGroup(props, vpc);
+    this.buildHost(props, vpc, securityGroup);
   }
 
   private useVPC(): ec2.IVpc {
@@ -26,7 +26,10 @@ export class EC2Stack extends cdk.Stack {
     });
   }
 
-  private buildSecurityGroup(props: CdkProps, vpc: ec2.IVpc) {
+  private buildSecurityGroup(
+    props: CdkProps,
+    vpc: ec2.IVpc
+  ): ec2.ISecurityGroup {
     const securityGroup = new ec2.SecurityGroup(this, "SecurityGroup", {
       vpc,
     });
@@ -54,7 +57,11 @@ export class EC2Stack extends cdk.Stack {
     return props.globalIPAddress;
   }
 
-  private buildHost(props: CdkProps, vpc: ec2.IVpc) {
+  private buildHost(
+    props: CdkProps,
+    vpc: ec2.IVpc,
+    securityGroup: ec2.ISecurityGroup
+  ) {
     const host = new ec2.BastionHostLinux(this, "BastionHost", {
       instanceName: "dev",
       machineImage: ec2.MachineImage.genericLinux(
@@ -70,6 +77,7 @@ export class EC2Stack extends cdk.Stack {
       vpc,
       subnetSelection: { subnetType: ec2.SubnetType.PUBLIC },
       availabilityZone: this.availabilityZone,
+      securityGroup,
     });
     host.instance.userData.addCommands(
       "sudo apt update -yqq",
