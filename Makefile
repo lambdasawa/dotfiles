@@ -6,7 +6,7 @@ update:
 	cd ${HOME}/.dotfiles/ && ./update.sh
 
 start-aws-ec2:
-	cd ${HOME}/.dotfiles/aws-ec2 && make
+	cd ${HOME}/.dotfiles/environments/aws-ec2 && make
 
 start-vagrant:
 	cd ${HOME}/.dotfiles/environments/vagrant-ubuntu && vagrant up && vagrant ssh
