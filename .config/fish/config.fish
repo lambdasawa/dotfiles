@@ -68,30 +68,20 @@ function setup-util
     source ~/.config/fish/util.fish
 end
 
+function setup-gundoud
+    if command -v gundoud 2>&1 >/dev/null
+        eval (gundoud command hook)
+    end
+end
+
+
 function setup-all
     setup-starship
     setup-direnv
     setup-zoxide
     setup-asdf
     setup-util
+    setup-gundoud
 end
 
 setup-all
-
-function play_command_status_sound --on-event fish_postexec
-    set s $status
-
-    if [ ! -e ~/.enable_fish_postexec_sound ]
-        return
-    end
-
-    if ! command -v gundoud 2>&1 >/dev/null
-        return
-    end
-
-    if [ $s -eq 0 ]
-        gundoud event command success 2>&1 >/dev/null &
-    else
-        gundoud event command failure 2>&1 >/dev/null &
-    end
-end
