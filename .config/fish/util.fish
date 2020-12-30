@@ -26,6 +26,9 @@ alias y="echo __TODO__"
 # alias z="echo __TODO__"
 
 alias rm="gomi"
+alias de="direnv exec ."
+alias ce="docker-compose exec"
+alias be="bundle exec"
 
 function reload
     source ~/.config/fish/util.fish
