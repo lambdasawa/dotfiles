@@ -15,11 +15,11 @@ prepare-ssh:
 	direnv exec . .bin/prepare-ssh
 
 start-instance:
-	direnv exec . aws ec2 start-instances --instance-ids $(shell .bin/get-instance-id)
+	direnv exec . aws ec2 start-instances --instance-ids $(shell direnv exec . .bin/get-instance-id)
 	sleep 60
 
 stop-instance:
-	direnv exec . aws ec2 stop-instances --instance-ids $(shell .bin/get-instance-id)
+	direnv exec . aws ec2 stop-instances --instance-ids $(shell direnv exec . .bin/get-instance-id)
 
 destroy:
 	yarn
