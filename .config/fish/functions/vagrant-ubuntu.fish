@@ -1,3 +1,3 @@
 function vagrant-ubuntu
-    cd ~/.dotfiles/vagrant/ubuntu/ && vagrant up && vagrant ssh
+    cd ~/.dotfiles/environments/vagrant-ubuntu/ && vagrant up && vagrant ssh
 end
