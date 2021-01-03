@@ -64,6 +64,12 @@ function setup-asdf
     source $HOME/.asdf/completions/asdf.fish
 end
 
+function setup-grc
+    if [ -e /usr/local/etc/grc.fish ]
+        . /usr/local/etc/grc.fish
+    end
+end
+
 function setup-util
     source ~/.config/fish/util.fish
 end
@@ -80,6 +86,7 @@ function setup-all
     setup-direnv
     setup-zoxide
     setup-asdf
+    setup-grc
     setup-util
     setup-gundoud
 end
