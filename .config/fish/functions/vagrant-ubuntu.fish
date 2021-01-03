@@ -1,3 +1,6 @@
 function vagrant-ubuntu
-    cd ~/.dotfiles/environments/vagrant-ubuntu/ && vagrant up && vagrant ssh
+    pushd $PWD
+    cd ~/.dotfiles
+    make start-vagrant-ubuntu
+    popd
 end

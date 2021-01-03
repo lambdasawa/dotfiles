@@ -1,3 +1,6 @@
 function vagrant-kali
-    cd ~/.dotfiles/environments/vagrant-kali/ && vagrant up && vagrant ssh
+    pushd $PWD
+    cd ~/.dotfiles
+    make start-vagrant-kali
+    popd
 end
