@@ -9,9 +9,9 @@ function create-dirs() {
 }
 
 function create-rep-dir-symlink-for-ghq() {
-  mkdir -p ~/src/github.com/lamb-sbx
-  rm -f ~/src/github.com/lamb-sbx/dotfiles
-  ln -sf $HOME/.dotfiles $HOME/src/github.com/lamb-sbx/
+  mkdir -p ~/src/github.com/lambdasawa
+  rm -f ~/src/github.com/lambdasawa/dotfiles
+  ln -sf $HOME/.dotfiles $HOME/src/github.com/lambdasawa/
 }
 
 function create-dotfiles-symlink() {
