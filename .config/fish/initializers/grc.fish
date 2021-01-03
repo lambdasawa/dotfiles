@@ -1,7 +1,7 @@
 if ! command -v grc 2>&1 >/dev/null
-    if is-mac
+    if command -v brew
         brew install grc
-    else if is-debian
+    else if command -v apt
         sudo apt install -y grc
     end
 end

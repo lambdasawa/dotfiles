@@ -1,7 +1,7 @@
 if ! command -v direnv 2>&1 >/dev/null
-    if is-mac
+    if command -v brew
         brew install direnv
-    else if is-debian
+    else if command -v apt
         sudo apt install -y direnv
     end
 end
