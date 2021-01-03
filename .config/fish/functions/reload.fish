@@ -1,4 +1,4 @@
 function reload
-    source ~/.config/fish/util.fish
+    source ~/.config/fish/config.fish
     echo 'Reload success.'
 end
