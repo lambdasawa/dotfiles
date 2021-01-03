@@ -1,4 +1,4 @@
-function random -a n
+function random-string -a n
     if [ -z "$n" ]
         set n 128
     end
