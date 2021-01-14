@@ -35,6 +35,8 @@ colors my
 #### Command ###################################################################
 ################################################################################
 
+command translate js -r js/translate.js
+
 command gitclone js -r js/git-clone.js
 
 command openvscode js -r js/open-vs-code.js
@@ -209,6 +211,9 @@ bind ,r composite js console.log('tridactylrc loading...'); source; js console.l
 
 # test js
 bind ,x js alert('~/.trydactylrc loaded!')
+
+# translate selected text to japanese
+bind a translate
 
 # exec git clone at github
 bind ,g gitclone
