@@ -6,5 +6,7 @@ function note
 
     mkdir -p $dir
 
-    eval $argv 2>&1 | tee $path
+    echo "\$ $argv" >$path
+
+    eval $argv 2>&1 | tee -a $path
 end
