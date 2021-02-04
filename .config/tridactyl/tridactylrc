@@ -45,10 +45,6 @@ command opentwitterintent js -r js/open-twitter-intent.js
 
 command youtubedl js -r js/youtube-dl.js
 
-command on_open_www_inoreader js -r js/on-open-www-inoreader.js
-
-command on_open_inoreader_bookmarklet js -p -r js/on-open-inoreader-bookmarklet.js
-
 ################################################################################
 #### Shortcut  #################################################################
 ################################################################################
@@ -156,9 +152,6 @@ bind x fillcmdline_notrail
 bind f hint
 bind F hint -b
 
-# save page
-bind i js tri.excmds.tabopen('-b', `https://jp.inoreader.com/bookmarklet/save_web_page/${encodeURIComponent(location.href)}`)
-
 # scroll
 bind j scrollline 10
 bind k scrollline -10
@@ -243,11 +236,5 @@ autocmd DocStart ^https://mail.google.com mode ignore
 # disable tridactyl shortcut at tweetdeck
 autocmd DocStart ^https://tweetdeck.twitter.com mode ignore
 
-# disable tridactyl shortcut at inoreader
-autocmd DocStart ^https://jp.inoreader.com mode ignore
-
-# redirect inoreader from www to jp
-autocmd DocStart ^https://www.inoreader.com on_open_www_inoreader
-
-# auto click save button in inoreader bookmarklet page
-autocmd DocStart ^https://jp.inoreader.com/bookmarklet/save_web_page composite echo TRI_FIRED_TRI_TABINDEX | on_open_inoreader_bookmarklet
+# disable tridactyl shortcut at feedly
+autocmd DocStart ^https://feedly.com/ mode ignore
