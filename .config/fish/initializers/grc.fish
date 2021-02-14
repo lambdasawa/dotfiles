@@ -6,8 +6,3 @@ if ! command -v grc 2>&1 >/dev/null
     end
 end
 
-if [ -e /usr/local/etc/grc.fish ]
-    source /usr/local/etc/grc.fish
-else if [ -e /etc/grc.fish ]
-    source /etc/grc.fish
-end
