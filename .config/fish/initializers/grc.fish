@@ -5,4 +5,3 @@ if ! command -v grc 2>&1 >/dev/null
         sudo apt install -y grc
     end
 end
-

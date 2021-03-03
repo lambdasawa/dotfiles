@@ -1,7 +1,7 @@
 function view -a file
     set mime (file --mime $file)
 
-    if echo $mime | grep 'application/zip'
+    if echo $mime | grep application/zip
         arc ls $file
         return
     end
