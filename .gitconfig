@@ -1,6 +1,6 @@
 [core]
   excludesfile = ~/.global_gitignore
-  pager = delta --theme='Monokai Extended'
+  pager = delta -s --theme='Monokai Extended'
 
 [user]
   email = lambdasawa@gmail.com
