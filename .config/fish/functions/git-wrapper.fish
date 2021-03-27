@@ -5,7 +5,7 @@ function git-wrapper
         tig
     else
         switch $argv[1]
-            case issue pr repo gist
+            case gist issue pr release repo alias api auth secret ssh-key
                 gh $argv[1..-1]
             case '*'
                 hub $argv[1..-1]
