@@ -12,6 +12,15 @@
 [diff "sopsdiffer"]
   textconv = "sops -d"
 
+[diff]
+  tool = default
+
+[difftool]
+  prompt = false
+
+[difftool "default"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
 [pull]
   rebase = true
 
