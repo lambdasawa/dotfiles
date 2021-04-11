@@ -1,5 +1,5 @@
 function gcloud-project-select
-    set p (gcloud projects list | f | awk '{print $1}')
+    set p (gcloud projects list | grep -v 'PROJECT_ID' | f | awk '{print $1}')
 
     [ -z "$p" ] && exit
 
