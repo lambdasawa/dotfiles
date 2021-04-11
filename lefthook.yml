@@ -11,4 +11,4 @@ post-merge:
   commands:
     apply:
       glob: "*"
-      run: ./apply
+      run: make
