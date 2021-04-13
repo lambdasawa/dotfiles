@@ -54,6 +54,7 @@ function setup-fish() {
 }
 
 function main() {
+  git pull
   create-dirs
   create-rep-dir-symlink-for-ghq
   craete-makefile-symlink
