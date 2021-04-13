@@ -14,6 +14,16 @@ function create-rep-dir-symlink-for-ghq() {
   ln -sf $HOME/.dotfiles $HOME/src/github.com/lambdasawa/
 }
 
+function remove-dotfiles-broken-symlink() {
+  for dir in ~ ~/.config/fish/functions; do
+    for path in $(find $dir -type l -maxdepth 1); do
+      if file $path | grep "broken symbolic link" 2>&1 >/dev/null; then
+        rm $path
+      fi
+    done
+  done
+}
+
 function create-dotfiles-symlink() {
   for path in $(find ./bin -type f | grep -v '.sh$'); do
     mkdir -p $HOME/$(dirname $path)
@@ -58,6 +68,7 @@ function main() {
   create-dirs
   create-rep-dir-symlink-for-ghq
   craete-makefile-symlink
+  remove-dotfiles-broken-symlink
   create-dotfiles-symlink
   update-packages
   setup-fish
