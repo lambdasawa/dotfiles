@@ -6,6 +6,9 @@
   email = lambdasawa@gmail.com
   name = Tsubasa Irisawa
 
+[init]
+  defaultBranch = main
+
 [interactive]
   diffFilter = delta --color-only
 
