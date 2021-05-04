@@ -24,6 +24,9 @@
 [difftool "default"]
   cmd = code --wait --diff $LOCAL $REMOTE
 
+[rebase]
+  autostash = true
+
 [pull]
   rebase = true
 
