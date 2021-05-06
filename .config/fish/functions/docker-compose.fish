@@ -7,5 +7,5 @@ function docker-compose
         end
     end
 
-    command docker-compose $argv
+    command docker compose $argv
 end
