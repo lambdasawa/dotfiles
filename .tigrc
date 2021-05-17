@@ -48,7 +48,7 @@ bind status  C ?fish -c "gitmoji -c"
 bind status  + ?git commit -v --amend
 bind status  S ?git stash
 bind status  p ?git push
-bind status  P ?fish -c "git push -u origin (git-current-branch) && gh pr create -fd -a @me && gh pr view -w"
+bind status  P ?fish -c "gh-pr-create"
 bind status  G ?gh pr view -w
 
 bind stage   u status-update
