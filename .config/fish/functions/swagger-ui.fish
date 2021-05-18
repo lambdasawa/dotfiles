@@ -11,7 +11,7 @@ function swagger-ui -a api_file_path port
     set api_file_realpath (realpath $api_file_path)
     set api_file_basename (basename $api_file_realpath)
 
-    set container_name swagger-ui
+    set container_name (echo "swagger-ui-$api_file_realpath" | sed 's|[./]|_|g')
 
     docker rm -f $container_name
 
@@ -25,12 +25,12 @@ function swagger-ui -a api_file_path port
         --env SWAGGER_JSON=/app/$api_file_basename \
         swaggerapi/swagger-ui
 
-    set url -sSL http://localhost:$port
-    while ! curl $url 2>&1 >/dev/null
+    set url http://localhost:$port
+    while ! curl -sSL $url 2>&1 >/dev/null
         echo "Wait server..."
         sleep 1
     end
-    echo "Sever open. $url"
+    echo "Sever listen: $url"
     open $url
 
     docker logs -f $container_name
