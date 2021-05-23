@@ -1,5 +1,4 @@
 [core]
-  excludesfile = ~/.global_gitignore
   pager = delta -s --theme='Monokai Extended'
 
 [user]

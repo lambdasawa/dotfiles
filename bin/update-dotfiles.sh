@@ -30,7 +30,7 @@ function create-dotfiles-symlink() {
     ln -sf $PWD/$path $HOME/$path
   done
 
-  for path in $(find . -type f | grep -v '.git/' | grep -e '^\./\.'); do
+  for path in $(find . -type f | grep -v '\.git/' | grep -e '^\./\.'); do
     mkdir -p $HOME/$(dirname $path)
     ln -sf $PWD/$path $HOME/$path
   done
