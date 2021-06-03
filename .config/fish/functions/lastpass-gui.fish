@@ -1,6 +1,6 @@
 function lastpass-gui
     if [ ! -e /Applications/LastPass.app ]
-        brew cask install lastpass
+        brew install --cask lastpass
     end
 
     open /Applications/LastPass.app/

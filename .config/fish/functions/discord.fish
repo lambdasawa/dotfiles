@@ -1,6 +1,6 @@
 function discord
     if [ ! -e /Applications/Discord ]
-        brew cask install discord
+        brew install --cask discord
     end
 
     open /Applications/Discord.app $argv

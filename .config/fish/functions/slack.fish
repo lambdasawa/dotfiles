@@ -1,6 +1,6 @@
 function slack
     if [ ! -e /Applications/Slack ]
-        brew cask install slack
+        brew install --cask slack
     end
 
     open /Applications/Slack.app $argv

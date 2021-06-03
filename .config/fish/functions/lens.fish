@@ -1,6 +1,6 @@
 function lens
     if [ ! -e /Applications/Lens.app ]
-        brew cask install lens
+        brew install --cask lens
     end
 
     open /Applications/Lens.app

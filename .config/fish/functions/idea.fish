@@ -6,7 +6,7 @@ function idea
     end
 
     if [ ! -e /Applications/IntelliJ\ IDEA.app ] && uname -a | grep Darwin
-        brew cask install intellij-idea
+        brew install --cask intellij-idea
     end
 
     if [ -e /Applications/IntelliJ\ IDEA.app ]

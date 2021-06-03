@@ -1,6 +1,6 @@
 function firefox
     if [ ! -e /Applications/Firefox.app ]
-        brew cask install firefox
+        brew install --cask firefox
     end
 
     if [ ! -e ~/.local/share/tridactyl ]
