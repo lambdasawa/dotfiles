@@ -25,7 +25,7 @@ function update-asdf
     asdf install ruby $ruby_version
     asdf global ruby $ruby_version
 
-    set python_version (asdf list all python | grep -v stackless | grep -v pyston | grep -v pypy | grep -v miniforge | grep -v miniconda | grep -v micropython | grep -v jython | grep -v ironpython | grep -v graalpython | grep -v anaconda | grep -v activepython | grep -v dev | tail -n 1)
+    set python_version (asdf list all python | grep -v stackless | grep -v pyston | grep -v pypy | grep -v mambaforge | grep -v miniforge | grep -v miniconda | grep -v micropython | grep -v jython | grep -v ironpython | grep -v graalpython | grep -v anaconda | grep -v activepython | grep -v dev | tail -n 1)
     asdf install python $python_version
     asdf global python $python_version
 
