@@ -5,8 +5,8 @@
 run: deploy start-instance ssh
 
 deploy:
-	yarn
-	direnv exec . yarn cdk deploy
+	npm i
+	direnv exec . npm run cdk -- deploy
 
 ssh: prepare-ssh
 	direnv exec . ssh -v lamb-sbx-ec2
@@ -22,5 +22,5 @@ stop-instance:
 	direnv exec . aws ec2 stop-instances --instance-ids $(shell direnv exec . .bin/get-instance-id)
 
 destroy:
-	yarn
-	direnv exec . yarn cdk destroy
+	npm i
+	direnv exec . npm run cdk -- destroy
