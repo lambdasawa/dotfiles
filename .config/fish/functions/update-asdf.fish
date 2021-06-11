@@ -1,7 +1,7 @@
 function update-asdf
     asdf plugin update --all
 
-    set go_version (asdf list all golang | tail -n 1)
+    set go_version (asdf list all golang | grep -v beta | tail -n 1)
     asdf install golang $go_version
     asdf global golang $go_version
 
