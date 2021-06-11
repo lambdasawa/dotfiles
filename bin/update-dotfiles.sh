@@ -53,6 +53,12 @@ function update-packages() {
   fi
 }
 
+function update-asdf() {
+  if which fish && which asdf; then
+    fish -c 'asdf-update'
+  fi
+}
+
 function setup-fish() {
   if ! command -v fish; then
     if is-mac; then
@@ -71,6 +77,7 @@ function main() {
   remove-dotfiles-broken-symlink
   create-dotfiles-symlink
   update-packages
+  update-asdf
   setup-fish
 }
 

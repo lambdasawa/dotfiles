@@ -1,4 +1,4 @@
-function update-asdf
+function asdf-update
     asdf plugin update --all
 
     set go_version (asdf list all golang | grep -v beta | tail -n 1)
