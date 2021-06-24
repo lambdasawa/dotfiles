@@ -13,6 +13,8 @@ function fish-posthook-long-command-notifier --on-event fish_postexec
     set -l duration_sec (math (date +%s) - (cat ~/tmp/fish/process/start_at/$fish_pid))
     set -l threshold_sec 3
     if [ $duration_sec -ge $threshold_sec ]
-        notify "Long command $message: $argv"
+        set -l a (echo $argv | sed 's/"/\\\"/g')
+        echo "Long command $message: $a"
+        notify "Long command $message: $a"
     end
 end
