@@ -10,6 +10,11 @@ function gh-run-watch
         )
         if [ -n "$id" ]
             gh run watch $id
+            if [ $status -eq 0 ]
+                notify "GitHub Action succeeded!"
+            else
+                notify "GitHub Action failed..."
+            end
             gh run view $id --log
         end
         sleep 5
