@@ -9,7 +9,7 @@ function gh-run-watch
           jq -r '.workflow_runs[] | select(.status == "in_progress") | .id' | head -n 1
         )
         if [ -n "$id" ]
-            gh run watch $id
+            gh run watch $id --exit-status
             if [ $status -eq 0 ]
                 notify "GitHub Action succeeded!"
             else
