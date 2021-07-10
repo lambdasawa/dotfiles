@@ -10,7 +10,7 @@ function create-dirs() {
 
 function create-rep-dir-symlink-for-ghq() {
   mkdir -p ~/src/github.com/lambdasawa
-  rm -f ~/src/github.com/lambdasawa/dotfiles
+  rm -f ~/src/github.com/lambdasawa/.dotfiles
   ln -sf $HOME/.dotfiles $HOME/src/github.com/lambdasawa/
 }
 
