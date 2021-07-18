@@ -32,6 +32,6 @@ function sandbox
     cd ~/src/github.com/$owner_repo
 
     gh repo view -w
-    tmuxinator local
     code --reuse-window .
+    tmuxinator local
 end
