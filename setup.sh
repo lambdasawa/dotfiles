@@ -2,6 +2,10 @@
 
 set -xeuo pipefail
 
+DOTFILES_DIRECTORY="$(dirname $(realpath ${BASH_SOURCE[0]}))"
+
+ln -sf "$DOTFILES_DIRECTORY/config.fish" "$HOME/.config/fish/config.fish"
+
 if [ "$(uname)" == "Darwin" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
