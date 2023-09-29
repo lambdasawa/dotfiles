@@ -18,6 +18,7 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install --cask \
         1password \
         firefox \
+        google-chrome \
         visual-studio-code \
         docker \
         aws-vault \
