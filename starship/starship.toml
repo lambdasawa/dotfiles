@@ -1,0 +1,116 @@
+format = """\
+  $env_var\
+  $username\
+  $hostname\
+  $directory\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_status\
+  $hg_branch\
+  $jobs\
+  $battery\
+  $memory_usage\
+  $cmd_duration\
+  $time\
+  $aws\
+  $gcloud\
+  $kubernetes\
+  $python\
+  $ruby\
+  $nodejs\
+  $java\
+  $dotnet\
+  $golang\
+  $rust\
+  $dart\
+  $terraform\
+  $line_break\
+  $character\
+"""
+
+[env_var.STARSHIP_SHELL]
+default = ""
+format = "([$env_value](green) )"
+
+[env_var.ENV]
+default = ""
+format = "([$env_value](yellow) )"
+
+[directory]
+style = 'cyan'
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+symbol = ""
+
+[git_status]
+format = "[$all_status$ahead_behind](red)"
+ahead = "ahead "
+behind = "behind "
+conflicted = "conflicted "
+deleted = "deleted "
+diverged = "diverged "
+modified = "modified "
+renamed = "renamed "
+staged = "staged "
+stashed = "stashed "
+untracked = "untracked "
+
+[time]
+disabled = false
+format = '[$time](white) '
+time_format = "%T"
+utc_time_offset = "+0"
+
+[cmd_duration]
+format = "[$duration](white) "
+min_time = 1
+show_milliseconds = true
+style = "white"
+
+[aws]
+format = "[aws:$profile/$region](blue) "
+
+[aws.region_aliases]
+ap-northeast-1 = "AN1"
+us-east-1 = "UE1"
+
+[gcloud]
+format = "[gcp:$project](cyan) "
+detect_env_vars = [
+  "GOOGLE_CLOUD_PROJECT",
+  "CLOUDSDK_CORE_ACCOUNT",
+  "CLOUDSDK_CORE_PROJECT",
+]
+
+[kubernetes]
+format = "[k8s:$context/$namespace]($style) "
+
+[terraform]
+format = "[tf:$version]($style) "
+
+[golang]
+format = "[go:$version]($style) "
+
+[rust]
+format = "[rust:$version]($style) "
+
+[java]
+format = "[java:$version]($style) "
+
+[nodejs]
+format = "[node:$version]($style) "
+
+[ruby]
+format = "[rb:$version]($style) "
+
+[python]
+format = "[py:$version]($style) "
+
+[dart]
+format = "[dart:$version]($style) "
+
+[character]
+error_symbol = "[|>](red)"
+success_symbol = "[|>](green)"

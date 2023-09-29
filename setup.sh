@@ -7,6 +7,9 @@ DOTFILES_DIRECTORY="$(dirname $(realpath ${BASH_SOURCE[0]}))"
 mkdir -p "$HOME/.config/fish"
 ln -sf "$DOTFILES_DIRECTORY/config.fish" "$HOME/.config/fish/config.fish"
 
+mkdir -p "$HOME/.config/starship"
+ln -sf "$DOTFILES_DIRECTORY/starship/starship.toml" "$HOME/.config/starship.toml"
+
 mkdir -p "$HOME/.config/zellij"
 ln -sf "$DOTFILES_DIRECTORY/zellij/config.kdl" "$HOME/.config/zellij/config.kdl"
 
