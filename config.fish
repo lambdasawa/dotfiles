@@ -86,7 +86,7 @@ if status is-interactive
     alias push "git push"
     alias pull "git pull"
 
-    if command -v zoxide >/dev/null 2>&1
+    if command -v zellij >/dev/null 2>&1
         eval (zellij setup --generate-auto-start fish | string collect)
     end
 end
