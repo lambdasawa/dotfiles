@@ -55,7 +55,32 @@ if status is-interactive
         set -gx EDITOR vim
     end
 
-    alias g "gitui"
+    # alias a ''
+    # alias b ''
+    # alias c ''
+    # alias d ''
+    # alias e ''
+    # alias f ''
+    alias g gitui
+    # alias h ''
+    # alias i ''
+    alias j jless
+    # alias k ''
+    # alias l ''
+    # alias m ''
+    # alias n ''
+    # alias o ''
+    # alias p ''
+    # alias q ''
+    # alias r ''
+    # alias s ''
+    alias t task
+    # alias u ''
+    # alias v ''
+    alias w watchexec
+    alias x xargs
+    # alias y ''
+    # alias z zoxide
     alias staging "git add ."
     alias commit "git commit -v"
     alias push "git push"
