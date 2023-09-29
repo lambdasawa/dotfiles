@@ -50,4 +50,8 @@ if status is-interactive
     alias commit "git commit -v"
     alias push "git push"
     alias pull "git pull"
+
+    if command -v zoxide >/dev/null 2>&1
+        eval (zellij setup --generate-auto-start fish | string collect)
+    end
 end
