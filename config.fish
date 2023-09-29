@@ -45,6 +45,12 @@ if status is-interactive
 
     fish_add_path ~/bin
 
+    if which code >/dev/null 2>&1
+        set -gx EDITOR "code --wait"
+    else if which vim >/dev/null 2>&1
+        set -gx EDITOR vim
+    end
+
     alias g "gitui"
     alias staging "git add ."
     alias commit "git commit -v"
