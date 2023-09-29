@@ -86,7 +86,7 @@ if status is-interactive
     alias push "git push"
     alias pull "git pull"
 
-    if command -v zellij >/dev/null 2>&1
+    if command -v zellij >/dev/null 2>&1 && [ "$TERM_PROGRAM" != "vscode" ]
         eval (zellij setup --generate-auto-start fish | string collect)
     end
 end
