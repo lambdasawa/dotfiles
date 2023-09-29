@@ -43,6 +43,10 @@ if status is-interactive
         zoxide init fish | source
     end
 
+    if command -v zoxide >/dev/null 2>&1
+        rtx activate fish | source
+    end
+
     fish_add_path ~/bin
 
     if which code >/dev/null 2>&1
