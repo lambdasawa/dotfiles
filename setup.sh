@@ -26,7 +26,8 @@ if [ "$(uname)" == "Darwin" ]; then
         google-cloud-sdk \
         intellij-idea \
         raycast \
-        slack
+        slack \
+        homebrew/cask-fonts/font-jetbrains-mono
 
     brew install \
         fish \
