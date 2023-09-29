@@ -32,7 +32,8 @@ if [ "$(uname)" == "Darwin" ]; then
         intellij-idea \
         raycast \
         slack \
-        homebrew/cask-fonts/font-jetbrains-mono
+        homebrew/cask-fonts/font-jetbrains-mono \
+        google-japanese-ime
 
     brew install \
         fish \
