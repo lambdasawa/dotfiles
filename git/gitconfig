@@ -1,0 +1,54 @@
+[user]
+name = "Tsubasa Irisawa"
+email = "lambdasawa@gmail.com"
+signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPhi6C9SMCWwpyodGGtBd9i7dXtPr9PISPmrk1KDNqE6
+
+[gpg]
+format = ssh
+
+[gpg "ssh"]
+program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+[commit]
+gpgsign = true
+
+[core]
+editor = code --wait
+pager = delta
+
+[init]
+defaultBranch = main
+
+[interactive]
+diffFilter = delta --color-only
+
+[add.interactive]
+useBuiltin = false
+
+[diff]
+tool = difftastic
+colorMoved = default
+
+[difftool]
+prompt = false
+
+[difftool "difftastic"]
+cmd = difft "$LOCAL" "$REMOTE"
+
+[push]
+autoSetupRemote = true
+
+[merge]
+conflictstyle = diff3
+
+[delta]
+light = false
+navigate = true
+side-by-side = true
+
+[ghq]
+root = ~/src
+user = lambdasawa
+
+[alias]
+root = rev-parse --show-toplevel
