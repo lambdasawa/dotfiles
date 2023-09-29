@@ -44,4 +44,9 @@ if status is-interactive
     end
 
     fish_add_path ~/bin
+
+    alias staging "git add ."
+    alias commit "git commit -v"
+    alias push "git push"
+    alias pull "git pull"
 end
