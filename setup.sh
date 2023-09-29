@@ -5,7 +5,7 @@ set -xeuo pipefail
 DOTFILES_DIRECTORY="$(dirname $(realpath ${BASH_SOURCE[0]}))"
 
 mkdir -p "$HOME/.config/fish"
-ln -sf "$DOTFILES_DIRECTORY/config.fish" "$HOME/.config/fish/config.fish"
+ln -sf "$DOTFILES_DIRECTORY/fish/config.fish" "$HOME/.config/fish/config.fish"
 
 mkdir -p "$HOME/.config/starship"
 ln -sf "$DOTFILES_DIRECTORY/starship/starship.toml" "$HOME/.config/starship.toml"
