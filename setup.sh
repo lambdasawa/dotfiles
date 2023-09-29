@@ -9,13 +9,15 @@ ln -sf "$DOTFILES_DIRECTORY/.gitconfig" "$HOME/.gitconfig"
 mkdir -p "$HOME/.config/fish"
 ln -sf "$DOTFILES_DIRECTORY/config.fish" "$HOME/.config/fish/config.fish"
 
-mkdir -p "$HOME/.config/starship"
 ln -sf "$DOTFILES_DIRECTORY/starship.toml" "$HOME/.config/starship.toml"
 
 mkdir -p "$HOME/.config/zellij"
 ln -sf "$DOTFILES_DIRECTORY/zellij.kdl" "$HOME/.config/zellij/config.kdl"
 
 if [ "$(uname)" == "Darwin" ]; then
+    if [ ! -e /opt/homebrew/bin/brew ]; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
     brew upgrade
