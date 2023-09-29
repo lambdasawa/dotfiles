@@ -22,6 +22,7 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install \
         fish \
         gh \
+        gitui \
         starship \
         direnv \
         zoxide \
