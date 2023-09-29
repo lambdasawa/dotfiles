@@ -38,6 +38,7 @@ if [ "$(uname)" == "Darwin" ]; then
         fish \
         zellij \
         gh \
+        ghq \
         gitui \
         starship \
         direnv \
