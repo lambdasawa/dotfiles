@@ -44,7 +44,10 @@ function zlj
         return # attach selected session
     end
 
+    pushd $PWD
+    cd $path
     zellij a -c (basename (realpath "$path")) # attach or create session
+    popd
 end
 
 if status is-interactive
