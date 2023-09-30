@@ -50,6 +50,13 @@ function zlj
     popd
 end
 
+function sandbox
+    set dir ~/tmp/sandbox/(date "+%Y%m%d%H%M%S")
+    mkdir -p $dir
+    code -r $dir
+    zlj $dir
+end
+
 if status is-interactive
     if [ -e /opt/homebrew/bin/brew ]
         eval "$(/opt/homebrew/bin/brew shellenv)"
