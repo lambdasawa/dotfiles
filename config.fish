@@ -26,6 +26,12 @@ function cd
     ll
 end
 
+function md
+    set d "$argv"
+    mkdir -p $d
+    cd $d
+end
+
 if status is-interactive
     if [ -e /opt/homebrew/bin/brew ]
         eval "$(/opt/homebrew/bin/brew shellenv)"
