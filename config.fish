@@ -57,9 +57,9 @@ if status is-interactive
 
     # alias a ''
     # alias b ''
-    # alias c ''
-    # alias d ''
-    # alias e ''
+    alias c 'docker compose'
+    alias d docker
+    alias e code
     # alias f ''
     alias g gitui
     # alias h ''
