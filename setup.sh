@@ -60,12 +60,12 @@ if [ "$(uname)" == "Darwin" ]; then
         sd \
         sk \
         jq \
-        jc \
-        gron \
         jless \
-        csview \
+        gron \
+        jc \
         pup \
         mdcat \
+        csview \
         pandoc \
         graphviz \
         hexyl \
