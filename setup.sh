@@ -44,6 +44,7 @@ if [ "$(uname)" == "Darwin" ]; then
         ghq \
         gitui \
         starship \
+        docker-compose \
         direnv \
         zoxide \
         rtx \
