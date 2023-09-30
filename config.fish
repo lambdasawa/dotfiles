@@ -32,6 +32,21 @@ function md
     cd $d
 end
 
+function zlj
+    set path "$argv[1]"
+    if [ -z "$path" ]
+        set session $(zellij list-sessions | sk)
+        if [ -z "$session" ]
+            return # noop
+        end
+
+        zellij a "$session"
+        return # attach selected session
+    end
+
+    zellij a -c (basename (realpath "$path")) # attach or create session
+end
+
 if status is-interactive
     if [ -e /opt/homebrew/bin/brew ]
         eval "$(/opt/homebrew/bin/brew shellenv)"
