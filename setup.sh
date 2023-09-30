@@ -63,9 +63,8 @@ if [ "$(uname)" == "Darwin" ]; then
         jc \
         gron \
         jless \
-        dsq \
         csview \
-        htmlq \
+        pup \
         mdcat \
         pandoc \
         graphviz \
