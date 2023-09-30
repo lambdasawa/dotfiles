@@ -72,7 +72,7 @@ if status is-interactive
     # alias i ''
     alias j jless
     # alias k ''
-     alias l ll
+    alias l ll
     # alias m ''
     # alias n ''
     # alias o ''
