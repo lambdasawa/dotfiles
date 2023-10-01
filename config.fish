@@ -51,7 +51,7 @@ function zlj
 end
 
 function sandbox
-    set dir ~/tmp/sandbox/(date "+%Y%m%d%H%M%S")
+    set dir ~/tmp/sandbox/(now)
     mkdir -p $dir
     code -r $dir
     zlj $dir
@@ -92,7 +92,7 @@ if status is-interactive
     alias d docker
     alias e code
     # alias f ''
-    alias g gitui
+    alias g git
     # alias h ''
     # alias i ''
     alias j jless
@@ -112,8 +112,19 @@ if status is-interactive
     alias x xargs
     # alias y ''
     # alias z zoxide
-    alias staging "git add ."
+    alias today 'date "+%Y-%m-%d"'
+    alias now 'date "+%Y-%m-%d-%H-%M-%S"'
+    alias gx gitui
+    alias branch 'git branch --format="%(refname:short)" | sk'
+    alias reflog 'git reflog | sk | awk "{print \$1}"'
+    alias repo 'ghq list -p | sk'
+    alias pr 'gh pr list | sk | awk "{print \$1}"'
+    alias chbranch "git switch"
+    alias mkbranch "git switch -C"
+    alias add "git add -p"
     alias commit "git commit -v"
+    alias amend "git commit -v --amend"
     alias push "git push"
     alias pull "git pull"
+    alias review='gh pr list -S "review-requested:@me" | awk "{print \$1}" | xargs -n 1 gh pr view -w'
 end
