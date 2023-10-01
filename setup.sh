@@ -86,4 +86,11 @@ if [ "$(uname)" == "Darwin" ]; then
         awscurl \
         scrcpy \
         yt-dlp
+elif uname -a | grep 'Linux kali' >/dev/null; then
+    sudo apt update -y
+    sudo apt install -y fish
+    curl -fsSL https://starship.rs/install.sh | env FORCE=1 sh
+    curl -fsSL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+    curl -fsSL https://direnv.net/install.sh | bash
+    curl https://rtx.pub/install.sh | sh
 fi
