@@ -51,10 +51,12 @@ function zlj
 end
 
 function sandbox
-    set dir ~/tmp/sandbox/(now)
+    set name $(now)
+    set dir ~/tmp/sandbox/$name
     mkdir -p $dir
-    code -r $dir
-    zlj $dir
+    code -a $dir
+    code $dir/Taskfile
+    zellij action new-tab -l compact -c $dir -n $name
 end
 
 if status is-interactive
