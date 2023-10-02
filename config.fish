@@ -130,4 +130,5 @@ if status is-interactive
     alias push "git push"
     alias pull "git pull"
     alias review='gh pr list -S "review-requested:@me" | awk "{print \$1}" | xargs -n 1 gh pr view -w'
+    alias zj zellij
 end
