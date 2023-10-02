@@ -115,7 +115,10 @@ if status is-interactive
     alias today 'date "+%Y-%m-%d"'
     alias now 'date "+%Y-%m-%d-%H-%M-%S"'
     alias gx gitui
+    alias toplevel 'git rev-parse --show-toplevel'
     alias branch 'git branch --format="%(refname:short)" | sk'
+    alias current-branch 'git rev-parse --abbrev-ref HEAD'
+    alias default-branch 'basename $(git symbolic-ref refs/remotes/origin/HEAD)'
     alias reflog 'git reflog | sk | awk "{print \$1}"'
     alias repo 'ghq list -p | sk'
     alias pr 'gh pr list | sk | awk "{print \$1}"'

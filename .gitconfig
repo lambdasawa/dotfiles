@@ -51,6 +51,3 @@ root = ~/src
 user = lambdasawa
 
 [alias]
-toplevel = rev-parse --show-toplevel
-current-branch = rev-parse --abbrev-ref HEAD
-default-branch = !bash -c 'basename $(git symbolic-ref refs/remotes/origin/HEAD)'
