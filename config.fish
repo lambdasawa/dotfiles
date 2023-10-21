@@ -81,6 +81,9 @@ if status is-interactive
     end
 
     fish_add_path ~/bin
+    fish_add_path ~/Library/Android/sdk/platform-tools/
+    fish_add_path ~/Library/Android/sdk/tools/bin/
+    fish_add_path "/Applications/IntelliJ IDEA.app/Contents/MacOS/"
 
     if which code >/dev/null 2>&1
         set -gx EDITOR "code --wait"
