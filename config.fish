@@ -71,6 +71,14 @@ function sandbox
     zellij action new-tab -l compact -c $dir -n $name
 end
 
+function python-init
+    rtx local --pin python@latest
+    curl -sSL https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore -o .gitignore
+    python -m venv venv
+    pip freeze >requirements.txt
+    pip install -r requirements.txt
+end
+
 if status is-interactive
     if [ -e /opt/homebrew/bin/brew ]
         eval "$(/opt/homebrew/bin/brew shellenv)"
