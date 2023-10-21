@@ -32,6 +32,18 @@ function md
     cd $d
 end
 
+function cc
+    if command -v pbcopy >/dev/null 2>&1
+        cat | pbcopy
+    end
+end
+
+function cv
+    if command -v pbpaste >/dev/null 2>&1
+        pbpaste
+    end
+end
+
 function zlj
     set path "$argv[1]"
     if [ -z "$path" ]
@@ -115,7 +127,7 @@ if status is-interactive
     # alias v ''
     alias w watchexec
     alias x xargs
-    # alias y ''
+    alias y yarn
     # alias z zoxide
     alias today 'date "+%Y-%m-%d"'
     alias now 'date "+%Y-%m-%d-%H-%M-%S"'
@@ -136,4 +148,6 @@ if status is-interactive
     alias pull "git pull"
     alias review='gh pr list -S "review-requested:@me" | awk "{print \$1}" | xargs -n 1 gh pr view -w'
     alias zj zellij
+    alias ce 'docker compose exec'
+    alias fish_venv ". ./venv/bin/activate.fish"
 end
