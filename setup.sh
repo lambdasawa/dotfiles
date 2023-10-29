@@ -6,6 +6,9 @@ DOTFILES_DIRECTORY="$(dirname $(realpath ${BASH_SOURCE[0]}))"
 
 ln -sf "$DOTFILES_DIRECTORY/.gitconfig" "$HOME/.gitconfig"
 
+mkdir -p "$HOME/.config/git"
+ln -sf "$DOTFILES_DIRECTORY/.global_gitignore" "$HOME/.config/git/ignore"
+
 mkdir -p "$HOME/.config/fish"
 ln -sf "$DOTFILES_DIRECTORY/config.fish" "$HOME/.config/fish/config.fish"
 
