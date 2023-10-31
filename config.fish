@@ -93,6 +93,7 @@ if status is-interactive
     end
 
     fish_add_path ~/bin
+    fish_add_path ~/dotfiles/bin
     fish_add_path ~/Library/Android/sdk/platform-tools/
     fish_add_path ~/Library/Android/sdk/tools/bin/
     fish_add_path "/Applications/IntelliJ IDEA.app/Contents/MacOS/"

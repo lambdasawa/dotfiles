@@ -1,0 +1,6 @@
+#!/usr/bin/env -S rtx x node@20 -- node
+
+const stdin = require("fs").readFileSync(0, "utf-8").trim();
+const ts = parseInt(stdin, 10);
+const date = new Date(ts*1000);
+console.log(date.toISOString());
