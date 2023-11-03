@@ -1,0 +1,28 @@
+.TridactylOwnNamespace.TridactylThemeLambdasawa {
+  --tridactyl-fg: #fbfbfe;
+  --tridactyl-bg: #1c1b22;
+  --tridactyl-highlight-box-fg: #d0d0d0;
+  --tridactyl-highlight-box-bg: #1c1b22;
+}
+
+.TridactylThemeLambdasawa #cmdline_iframe {
+  position: fixed !important;
+  top: 25% !important;
+  bottom: unset !important;
+  left: 5% !important;
+  width: 90% !important;
+  font-family: "UDEV Gothic 35NF", sans-serif !important;
+}
+
+:root.TridactylThemeLambdasawa #command-line-holder {
+  order: 1;
+}
+
+:root.TridactylThemeLambdasawa #completions {
+  order: 2;
+}
+
+:root.TridactylThemeLambdasawa #completions .sectionHeader {
+  visibility: hidden;
+  height: 0px;
+}

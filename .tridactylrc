@@ -1,0 +1,87 @@
+set hintchars jfkdhglsamvurceixwozqp
+set smoothscroll true
+set findcase smart
+
+# https://github.com/tridactyl/tridactyl/tree/master/src/static/themes
+colors --url https://raw.githubusercontent.com/lambdasawa/dotfiles/main/.tridactylrc.css lambdasawa
+set theme lambdasawa
+
+unbind I
+unbind x
+unbind f
+unbind F
+unbind s
+unbind j
+unbind k
+unbind G
+unbind gg
+unbind /
+unbind ?
+unbind n
+unbind N
+unbind l
+unbind b
+unbind o
+unbind t
+unbind p
+unbind P
+unbind d
+unbind p
+unbind H
+unbind L
+unbind r
+unbind R
+unbind zi
+unbind zo
+unbind zz
+
+bind I mode ignore
+bind x fillcmdline_notrail
+bind f hint
+bind F hint -b
+bind s hint -h
+bind j scrollline 10
+bind k scrollline -10
+bind G scrollto 100
+bind gg scrollto 0
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
+bind l tabnext
+bind b fillcmdline buffer
+bind o fillcmdline open
+bind t fillcmdline tabopen
+bind p clipboard open
+bind P clipboard tabopen
+bind d tabclose
+bind p pin
+bind H back
+bind L forward
+bind r reload
+bind R reloadhard
+bind zi zoom 0.1 true
+bind zo zoom -0.1 true
+bind zz zoom 1
+
+# test js
+bind ,x js alert('Hello, tridactyl!')
+
+# reload settings
+bind ,r composite js alert('tridactylrc loading...'); source --url https://raw.githubusercontent.com/lambdasawa/dotfiles/main/.tridactylrc; js alert('tridactylrc loaded!')
+
+# send current page to feedly
+command addfeedly js window.open(`https://feedly.com/i/discover/sources/search/feed/${encodeURIComponent(location.href)}`, "_blank")
+bind ,f addfeedly
+
+# open twitter share link
+command opentwitterintent js window.open(`https://twitter.com/intent/tweet?text=` + encodeURIComponent(`${document.title}\n${location.href}`), "_blank")
+bind ,t opentwitterintent
+
+# copy markdown link to clipboard
+bind ,m clipboard yankmd
+
+autocmd DocStart ^https://mail.google.com mode ignore
+autocmd DocStart ^https://tweetdeck.twitter.com mode ignore
+autocmd DocStart ^https://feedly.com/ mode ignore
+autocmd DocStart ^https://app.slack.com/ mode ignore
