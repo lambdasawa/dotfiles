@@ -1,0 +1,9 @@
+[tools]
+# python = { version = '3.12.0', virtualenv = '{{env.HOME}}/.cache/venv' }
+python = "3.12.0"
+ruby = "3.2.2"
+node = "21.1.0"
+go = "1.21.4"
+gradle = "8.4"
+java = "21.0.1"
+terraform = "1.6.3"

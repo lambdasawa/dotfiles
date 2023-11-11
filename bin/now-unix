@@ -1,4 +1,4 @@
-#!/usr/bin/env -S rtx x node@20 -- node
+#!/usr/bin/env node
 
 const date = new Date()
 console.log(Math.floor(date.getTime()/1000));

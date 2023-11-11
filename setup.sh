@@ -17,6 +17,13 @@ ln -sf "$DOTFILES_DIRECTORY/starship.toml" "$HOME/.config/starship.toml"
 mkdir -p "$HOME/.config/zellij"
 ln -sf "$DOTFILES_DIRECTORY/zellij.kdl" "$HOME/.config/zellij/config.kdl"
 
+mkdir -p ~/.config/rtx
+ln -sf "$DOTFILES_DIRECTORY/.default-python-packages" "$HOME/.default-python-packages"
+ln -sf "$DOTFILES_DIRECTORY/.default-gems" "$HOME/.default-gems"
+ln -sf "$DOTFILES_DIRECTORY/.default-npm-packages" "$HOME/.default-npm-packages"
+ln -sf "$DOTFILES_DIRECTORY/.default-go-packages" "$HOME/.default-go-packages"
+ln -sf "$DOTFILES_DIRECTORY/.rtx.toml" "$HOME/.config/rtx/config.toml"
+
 if [ "$(uname)" == "Darwin" ]; then
     if [ ! -e /opt/homebrew/bin/brew ]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

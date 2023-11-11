@@ -1,4 +1,4 @@
-#!/usr/bin/env -S rtx x node@20 -- node
+#!/usr/bin/env node
 
 const stdin = require("fs").readFileSync(0, "utf-8");
 console.log(encodeURIComponent(stdin));
