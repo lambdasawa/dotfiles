@@ -71,6 +71,7 @@ style = "white"
 
 [aws]
 format = "[aws:$profile/$region](blue) "
+force_display = true
 
 [aws.region_aliases]
 ap-northeast-1 = "AN1"
