@@ -119,7 +119,7 @@ if status is-interactive
     # alias m ''
     # alias n ''
     # alias o ''
-    # alias p ''
+    alias p pnpm
     # alias q ''
     # alias r ''
     # alias s ''
@@ -150,4 +150,5 @@ if status is-interactive
     alias review='gh pr list -S "review-requested:@me" | awk "{print \$1}" | xargs -n 1 gh pr view -w'
     alias zj zellij
     alias ce 'docker compose exec'
+    alias gl gradle
 end
