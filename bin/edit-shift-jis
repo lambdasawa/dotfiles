@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -xeuo pipefail
+
+DIR=$(mktemp -d)
+SHIFT_JIS_FILE_PATH="$(realpath ${1:?})"
+SHIFT_JIS_FILE_NAME="$(basename $SHIFT_JIS_FILE_PATH)"
+UTF_8_FILE_NAME="__utf8__$SHIFT_JIS_FILE_NAME"
+
+cp "$SHIFT_JIS_FILE_PATH" "$DIR/$SHIFT_JIS_FILE_NAME"
+
+cd "$DIR"
+iconv -f SHIFT-JIS -t UTF-8 "$SHIFT_JIS_FILE_NAME" >"$UTF_8_FILE_NAME"
+$EDITOR "$UTF_8_FILE_NAME"
+iconv -f UTF-8 -t SHIFT-JIS "$UTF_8_FILE_NAME" >"$SHIFT_JIS_FILE_NAME"
+cp "$SHIFT_JIS_FILE_NAME" "$SHIFT_JIS_FILE_PATH"
