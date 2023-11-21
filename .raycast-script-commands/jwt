@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# @raycast.schemaVersion 1
+# @raycast.title jwt
+# @raycast.mode fullOutput
+# @raycast.packageName dotfiles
+
+jwt decode -j "$(pbpaste)"

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# @raycast.schemaVersion 1
+# @raycast.title prettier
+# @raycast.mode silent
+# @raycast.packageName dotfiles
+
+tmp="$(mktemp -d)"
+pbpaste >"$tmp/index.js"
+rtx exec -- prettier -w "$tmp/index.js"
+cat "$tmp/index.js" | pbcopy
