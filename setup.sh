@@ -14,8 +14,8 @@ ln -sf "$DOTFILES_DIRECTORY/config.fish" "$HOME/.config/fish/config.fish"
 
 ln -sf "$DOTFILES_DIRECTORY/starship.toml" "$HOME/.config/starship.toml"
 
-mkdir -p "$HOME/.config/zellij"
-ln -sf "$DOTFILES_DIRECTORY/zellij.kdl" "$HOME/.config/zellij/config.kdl"
+mkdir -p "$HOME/.config/wezterm"
+ln -sf "$DOTFILES_DIRECTORY/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
 
 mkdir -p ~/.config/rtx
 ln -sf "$DOTFILES_DIRECTORY/.default-python-packages" "$HOME/.default-python-packages"
@@ -36,6 +36,7 @@ if [ "$(uname)" == "Darwin" ]; then
         1password \
         firefox \
         google-chrome \
+        wezterm \
         visual-studio-code \
         docker \
         aws-vault \
@@ -49,7 +50,6 @@ if [ "$(uname)" == "Darwin" ]; then
 
     brew install \
         fish \
-        zellij \
         gh \
         ghq \
         gitui \
