@@ -33,7 +33,15 @@ config.keys = {
   {
     key = 'j',
     mods = 'CTRL',
-    action = wezterm.action.ActivatePaneDirection 'Next'
+    action = wezterm.action.ActivatePaneDirection 'Next',
+  },
+  {
+    key = 'F13',
+    action = wezterm.action.QuickSelectArgs { patterns = { '\\S+' } },
+  },
+  {
+    key = 'F18',
+    action = wezterm.action.ActivateCopyMode,
   },
 }
 
