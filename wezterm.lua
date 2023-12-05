@@ -5,7 +5,16 @@ local config = {}
 config.font = wezterm.font 'JetBrains Mono'
 config.font_size = 10
 config.color_scheme = 'Monokai Remastered'
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.8
+config.use_fancy_tab_bar = false
+config.colors = {
+  tab_bar = {
+    active_tab = {
+      fg_color = "#202020",
+      bg_color = "#ff8c01"
+    }
+  }
+}
 
 -- keyboard
 config.send_composed_key_when_left_alt_is_pressed = false
