@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# @raycast.schemaVersion 1
+# @raycast.title jless
+# @raycast.mode silent
+# @raycast.packageName dotfiles
+
+wezterm cli spawn -- bash -c 'pbpaste | jless'

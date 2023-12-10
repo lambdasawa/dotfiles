@@ -2,7 +2,7 @@
 
 # @raycast.schemaVersion 1
 # @raycast.title jwt
-# @raycast.mode fullOutput
+# @raycast.mode silent
 # @raycast.packageName dotfiles
 
-jwt decode -j "$(pbpaste)"
+wezterm cli spawn --cwd ~/src/github.com/ticarpi/jwt_tool -- fish -c 'rtx exec -- python ./jwt_tool.py "$(pbpaste)" 2>/dev/null; exec fish'
