@@ -62,6 +62,11 @@ function zlj
     popd
 end
 
+function kill-by-port
+    set port "$argv[1]"
+    kill (lsof -i "tcp:$port" | grep -v PID | awk '{print $2}')
+end
+
 function sandbox
     set name $(now)
     set dir ~/tmp/sandbox/$name
