@@ -14,6 +14,15 @@ bind G scrollto 100
 bind h tabnext -1
 bind l tabnext +1
 
+bind <F13> back
+bind <F18> forward
+
+bind <F16> tabnext -1
+bind <F19> tabnext +1
+
+# bind <F17>
+# bind <F20>
+
 # test js
 bind ,x js alert('Hello, tridactyl!!!')
 
@@ -30,8 +39,3 @@ bind ,t opentwitterintent
 
 # copy markdown link to clipboard
 bind ,m clipboard yankmd
-
-autocmd DocStart ^https://mail.google.com mode ignore
-autocmd DocStart ^https://tweetdeck.twitter.com mode ignore
-autocmd DocStart ^https://feedly.com/ mode ignore
-autocmd DocStart ^https://app.slack.com/ mode ignore
