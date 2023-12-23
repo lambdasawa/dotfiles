@@ -43,6 +43,18 @@ config.keys = {
     key = 'F18',
     action = wezterm.action.ActivateCopyMode,
   },
+  {
+    key = 'F16',
+    action = wezterm.action {
+      ActivateTabRelative = -1,
+    },
+  },
+  {
+    key = 'F19',
+    action = wezterm.action {
+      ActivateTabRelative = 1,
+    },
+  },
 }
 
 -- misc
