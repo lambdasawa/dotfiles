@@ -1,0 +1,35 @@
+set hintchars jfkdhglsamvurceixwozqp
+set smoothscroll true
+set findcase smart
+
+# https://github.com/tridactyl/tridactyl/tree/master/src/static/themes
+colors lambdasawa
+set theme lambdasawa
+
+command feedly-search         js -r js/feedly-search.js
+command twitter-intent-open   js -r js/twitter-intent-open.js
+command container-import      js -r js/container-import.js
+command container-delete-all  js -r js/container-delete-all.js
+command container-open-all    js -r js/container-open-all.js
+command container-view-active js -r js/container-view-active.js
+command httpbin-cookie        js -r js/httpbin-cookie.js
+
+bind I mode ignore
+bind x fillcmdline_notrail
+bind j scrollline 10
+bind k scrollline -10
+bind G scrollto 100
+bind h tabnext -1
+bind l tabnext +1
+bind <F13> back
+bind <F18> forward
+bind <F16> tabnext -1
+bind <F19> tabnext +1
+# bind <F17>
+# bind <F20>
+bind ,r source
+bind ,f feedly-search
+bind ,t twitter-intent-open
+bind ,m clipboard yankmd
+
+js alert('tri ok')
