@@ -1,3 +1,5 @@
+sanitise
+
 set hintchars jfkdhglsamvurceixwozqp
 set smoothscroll true
 set findcase smart
