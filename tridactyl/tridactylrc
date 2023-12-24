@@ -14,11 +14,13 @@ command container-open-all    js -r js/container-open-all.js
 command container-view-active js -r js/container-view-active.js
 command httpbin-cookie        js -r js/httpbin-cookie.js
 
+# https://github.com/tridactyl/tridactyl/blob/1.24.0/src/lib/config.ts
 bind I mode ignore
 bind x fillcmdline_notrail
 bind j scrollline 10
 bind k scrollline -10
 bind G scrollto 100
+bind <C-t> tabnew
 bind h tabnext -1
 bind l tabnext +1
 bind <F13> back
