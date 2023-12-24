@@ -24,6 +24,13 @@ ln -sf "$DOTFILES_DIRECTORY/.default-npm-packages" "$HOME/.default-npm-packages"
 ln -sf "$DOTFILES_DIRECTORY/.default-go-packages" "$HOME/.default-go-packages"
 ln -sf "$DOTFILES_DIRECTORY/.rtx.toml" "$HOME/.config/rtx/config.toml"
 
+mkdir -p "$HOME/.config/tridactyl"
+mkdir -p "$HOME/.config/tridactyl/js"
+mkdir -p "$HOME/.config/tridactyl/themes"
+for path in $(find tridactyl -type f); do
+    ln -sf "$DOTFILES_DIRECTORY/$path" "$HOME/.config/$path"
+done
+
 if [ "$(uname)" == "Darwin" ]; then
     if [ ! -e /opt/homebrew/bin/brew ]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
