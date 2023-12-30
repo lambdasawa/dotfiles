@@ -10,6 +10,7 @@ set theme lambdasawa
 
 command feedly-search         js -r js/feedly-search.js
 command twitter-intent-open   js -r js/twitter-intent-open.js
+command eval-on-all-tabs      js -r js/eval-on-all-tabs.js
 command container-import      js -r js/container-import.js
 command container-delete-all  js -r js/container-delete-all.js
 command container-open-all    js -r js/container-open-all.js
