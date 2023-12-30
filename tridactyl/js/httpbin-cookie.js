@@ -1,57 +1,62 @@
-/*
-[
-  {
-    "name": "1",
-    "icon": "fingerprint",
-    "color": "red",
-    "params": { "foo": "fingerprint-red" }
-  },
-  {
-    "name": "2",
-    "icon": "food",
-    "color": "turquoise",
-    "params": { "foo": "food-turquoise" }
-  },
-  {
-    "name": "3",
-    "icon": "pet",
-    "color": "orange",
-    "params": { "foo": "pet-orange" }
-  },
-  {
-    "name": "4",
-    "icon": "fruit",
-    "color": "blue",
-    "params": { "foo": "fruit-blue" }
-  },
-  {
-    "name": "5",
-    "icon": "vacation",
-    "color": "yellow",
-    "params": { "foo": "vacation-yellow" }
-  },
-  {
-    "name": "6",
-    "icon": "tree",
-    "color": "purple",
-    "params": { "foo": "tree-purple" }
-  },
-  {
-    "name": "7",
-    "icon": "dollar",
-    "color": "green",
-    "params": { "foo": "dollar-green" }
-  },
-  {
-    "name": "8",
-    "icon": "gift",
-    "color": "pink",
-    "params": { "foo": "gift-pink" }
-  }
-]
-*/
-
 (async () => {
+  console.log("Sample Containers JSON:");
+  console.log(
+    JSON.stringify(
+      [
+        {
+          name: "1",
+          icon: "fingerprint",
+          color: "red",
+          params: { foo: "fingerprint-red" },
+        },
+        {
+          name: "2",
+          icon: "food",
+          color: "turquoise",
+          params: { foo: "food-turquoise" },
+        },
+        {
+          name: "3",
+          icon: "pet",
+          color: "orange",
+          params: { foo: "pet-orange" },
+        },
+        {
+          name: "4",
+          icon: "fruit",
+          color: "blue",
+          params: { foo: "fruit-blue" },
+        },
+        {
+          name: "5",
+          icon: "vacation",
+          color: "yellow",
+          params: { foo: "vacation-yellow" },
+        },
+        {
+          name: "6",
+          icon: "tree",
+          color: "purple",
+          params: { foo: "tree-purple" },
+        },
+        {
+          name: "7",
+          icon: "dollar",
+          color: "green",
+          params: { foo: "dollar-green" },
+        },
+        {
+          name: "8",
+          icon: "gift",
+          color: "pink",
+          params: { foo: "gift-pink" },
+        },
+      ],
+      null,
+      2
+    )
+  );
+
   const containersJSON = JSON.parse(prompt("Containers JSON:"));
 
   const baseUrl = "https://httpbin.org#";
@@ -103,27 +108,29 @@
 })();
 `;
 
+  const { browserBg } = tri;
+
   // remove all containers
-  const oldContainers = await tri.browserBg.contextualIdentities.query({});
+  const oldContainers = await browserBg.contextualIdentities.query({});
   await Promise.all(
     oldContainers.map((c) =>
-      tri.browserBg.contextualIdentities.remove(c.cookieStoreId)
+      browserBg.contextualIdentities.remove(c.cookieStoreId)
     )
   );
 
   // create containers
   await Promise.all(
     containersJSON.map(({ name, color, icon }) => {
-      tri.browserBg.contextualIdentities.create({ name, color, icon });
+      browserBg.contextualIdentities.create({ name, color, icon });
     })
   );
-  const newContainers = await tri.browserBg.contextualIdentities.query({});
+  const newContainers = await browserBg.contextualIdentities.query({});
 
   // create tabs
   const tabs = await Promise.all(
     newContainers.map((container) => {
       const c = containersJSON.find((c) => c.name === container.name);
-      return tri.browserBg.tabs.create({
+      return browserBg.tabs.create({
         cookieStoreId: container.cookieStoreId,
         url: baseUrl + new URLSearchParams(c.params).toString(),
       });
@@ -133,7 +140,7 @@
   // execute script in tabs
   const results = await Promise.all(
     tabs.map((tab) => {
-      return tri.browserBg.tabs.executeScript(tab.id, {
+      return browserBg.tabs.executeScript(tab.id, {
         code,
       });
     })

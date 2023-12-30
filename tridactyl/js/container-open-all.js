@@ -1,8 +1,10 @@
 (async () => {
-  const containers = await tri.browserBg.contextualIdentities.query({});
+  const { browserBg } = tri;
+
+  const containers = await browserBg.contextualIdentities.query({});
   await Promise.all(
     containers.map(({ cookieStoreId }) =>
-      tri.browserBg.tabs.create({ cookieStoreId })
+      browserBg.tabs.create({ cookieStoreId })
     )
   );
 })();

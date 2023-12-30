@@ -1,3 +1,5 @@
 (async () => {
-  alert(JSON.stringify(await tri.webext.activeTabContainer()));
+  const { webext } = tri;
+
+  alert(JSON.stringify(await webext.activeTabContainer()));
 })();
