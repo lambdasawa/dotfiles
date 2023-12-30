@@ -44,36 +44,9 @@ function cv
     end
 end
 
-function zlj
-    set path "$argv[1]"
-    if [ -z "$path" ]
-        set session $(zellij list-sessions | sk)
-        if [ -z "$session" ]
-            return # noop
-        end
-
-        zellij a "$session"
-        return # attach selected session
-    end
-
-    pushd $PWD
-    cd $path
-    zellij a -c (basename (realpath "$path")) # attach or create session
-    popd
-end
-
 function kill-by-port
     set port "$argv[1]"
     kill (lsof -i "tcp:$port" | grep -v PID | awk '{print $2}')
-end
-
-function sandbox
-    set name $(now)
-    set dir ~/tmp/sandbox/$name
-    mkdir -p $dir
-    code -a $dir
-    code $dir/Taskfile
-    zellij action new-tab -l compact -c $dir -n $name
 end
 
 if status is-interactive
@@ -151,7 +124,6 @@ if status is-interactive
     alias push "git push"
     alias pull "git pull"
     alias review='gh pr list -S "review-requested:@me" | awk "{print \$1}" | xargs -n 1 gh pr view -w'
-    alias zj zellij
     alias ce 'docker compose exec'
     alias gl gradle
 end
