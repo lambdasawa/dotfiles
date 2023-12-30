@@ -4,25 +4,24 @@ set -xeuo pipefail
 
 DOTFILES_DIRECTORY="$(dirname $(realpath ${BASH_SOURCE[0]}))"
 
-ln -sf "$DOTFILES_DIRECTORY/.gitconfig" "$HOME/.gitconfig"
-
 mkdir -p "$HOME/.config/git"
-ln -sf "$DOTFILES_DIRECTORY/.global_gitignore" "$HOME/.config/git/ignore"
+ln -sf "$DOTFILES_DIRECTORY/git/.gitconfig" "$HOME/.gitconfig"
+ln -sf "$DOTFILES_DIRECTORY/git/ignore" "$HOME/.config/git/ignore"
 
 mkdir -p "$HOME/.config/fish"
-ln -sf "$DOTFILES_DIRECTORY/config.fish" "$HOME/.config/fish/config.fish"
+ln -sf "$DOTFILES_DIRECTORY/fish/config.fish" "$HOME/.config/fish/config.fish"
 
-ln -sf "$DOTFILES_DIRECTORY/starship.toml" "$HOME/.config/starship.toml"
+ln -sf "$DOTFILES_DIRECTORY/starship/starship.toml" "$HOME/.config/starship.toml"
 
 mkdir -p "$HOME/.config/wezterm"
-ln -sf "$DOTFILES_DIRECTORY/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
+ln -sf "$DOTFILES_DIRECTORY/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
 
 mkdir -p ~/.config/rtx
-ln -sf "$DOTFILES_DIRECTORY/.default-python-packages" "$HOME/.default-python-packages"
-ln -sf "$DOTFILES_DIRECTORY/.default-gems" "$HOME/.default-gems"
-ln -sf "$DOTFILES_DIRECTORY/.default-npm-packages" "$HOME/.default-npm-packages"
-ln -sf "$DOTFILES_DIRECTORY/.default-go-packages" "$HOME/.default-go-packages"
-ln -sf "$DOTFILES_DIRECTORY/.rtx.toml" "$HOME/.config/rtx/config.toml"
+ln -sf "$DOTFILES_DIRECTORY/rtx/.default-python-packages" "$HOME/.default-python-packages"
+ln -sf "$DOTFILES_DIRECTORY/rtx/.default-gems" "$HOME/.default-gems"
+ln -sf "$DOTFILES_DIRECTORY/rtx/.default-npm-packages" "$HOME/.default-npm-packages"
+ln -sf "$DOTFILES_DIRECTORY/rtx/.default-go-packages" "$HOME/.default-go-packages"
+ln -sf "$DOTFILES_DIRECTORY/rtx/.rtx.toml" "$HOME/.config/rtx/config.toml"
 
 mkdir -p "$HOME/.config/tridactyl"
 mkdir -p "$HOME/.config/tridactyl/js"

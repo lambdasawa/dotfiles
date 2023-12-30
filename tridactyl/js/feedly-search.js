@@ -1,6 +1,6 @@
 window.open(
   `https://feedly.com/i/discover/sources/search/feed/${encodeURIComponent(
-    location.href,
+    location.href
   )}`,
-  "_blank",
+  "_blank"
 );
