@@ -131,7 +131,6 @@ elif uname -a | grep 'Linux kali' >/dev/null; then
     sudo apt install -y fish
     curl -fsSL https://starship.rs/install.sh | env FORCE=1 sh
     curl -fsSL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-    curl -fsSL https://direnv.net/install.sh | bash
     curl https://rtx.pub/install.sh | sh
     sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
 elif [ "$CODESPACES" == "true" ]; then
@@ -139,7 +138,6 @@ elif [ "$CODESPACES" == "true" ]; then
     sudo apt install -y fish
     curl -fsSL https://starship.rs/install.sh | env FORCE=1 sh
     curl -fsSL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-    curl -fsSL https://direnv.net/install.sh | bash
     curl https://rtx.pub/install.sh | sh
     sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
 fi
