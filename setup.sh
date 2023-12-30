@@ -5,7 +5,7 @@ set -xeuo pipefail
 DOTFILES_DIRECTORY="$(dirname $(realpath ${BASH_SOURCE[0]}))"
 
 mkdir -p "$HOME/.config/git"
-ln -sf "$DOTFILES_DIRECTORY/git/.gitconfig" "$HOME/.gitconfig"
+ln -sf "$DOTFILES_DIRECTORY/git/config" "$HOME/.config/git/config"
 ln -sf "$DOTFILES_DIRECTORY/git/ignore" "$HOME/.config/git/ignore"
 
 mkdir -p "$HOME/.config/fish"
