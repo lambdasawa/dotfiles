@@ -127,4 +127,5 @@ if status is-interactive
     alias ce 'docker compose exec'
     alias gl gradle
     alias irg "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
+    alias tree 'eza -T'
 end
