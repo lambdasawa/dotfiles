@@ -126,4 +126,5 @@ if status is-interactive
     alias review='gh pr list -S "review-requested:@me" | awk "{print \$1}" | xargs -n 1 gh pr view -w'
     alias ce 'docker compose exec'
     alias gl gradle
+    alias irg "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
 end
