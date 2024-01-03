@@ -15,13 +15,13 @@ install-fish-conf() {
     ln -sf "$DOTFILES_DIRECTORY/fish/config.fish" "$HOME/.config/fish/config.fish"
 }
 
-intall-rtx-conf() {
-    mkdir -p "$HOME/.config/rtx"
-    ln -sf "$DOTFILES_DIRECTORY/rtx/.default-python-packages" "$HOME/.default-python-packages"
-    ln -sf "$DOTFILES_DIRECTORY/rtx/.default-gems" "$HOME/.default-gems"
-    ln -sf "$DOTFILES_DIRECTORY/rtx/.default-npm-packages" "$HOME/.default-npm-packages"
-    ln -sf "$DOTFILES_DIRECTORY/rtx/.default-go-packages" "$HOME/.default-go-packages"
-    ln -sf "$DOTFILES_DIRECTORY/rtx/.rtx.toml" "$HOME/.config/rtx/config.toml"
+intall-mise-conf() {
+    mkdir -p "$HOME/.config/mise"
+    ln -sf "$DOTFILES_DIRECTORY/mise/.default-python-packages" "$HOME/.default-python-packages"
+    ln -sf "$DOTFILES_DIRECTORY/mise/.default-gems" "$HOME/.default-gems"
+    ln -sf "$DOTFILES_DIRECTORY/mise/.default-npm-packages" "$HOME/.default-npm-packages"
+    ln -sf "$DOTFILES_DIRECTORY/mise/.default-go-packages" "$HOME/.default-go-packages"
+    ln -sf "$DOTFILES_DIRECTORY/mise/.mise.toml" "$HOME/.config/mise/config.toml"
 }
 
 install-starship-conf() {
@@ -76,7 +76,7 @@ setup-brew() {
         docker-compose \
         direnv \
         zoxide \
-        rtx \
+        mise \
         watchexec \
         go-task/tap/go-task \
         1password-cli \
@@ -121,7 +121,7 @@ setup-brew() {
 if [ "$(uname)" == "Darwin" ]; then
     install-git-conf
     install-fish-conf
-    intall-rtx-conf
+    intall-mise-conf
     install-starship-conf
     install-wezterm-conf
     install-tridactyl-conf
@@ -131,6 +131,6 @@ elif uname -a | grep 'Linux kali' >/dev/null; then
     sudo apt install -y fish
     curl -fsSL https://starship.rs/install.sh | env FORCE=1 sh
     curl -fsSL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-    curl https://rtx.pub/install.sh | sh
+    curl https://mise.jdx.dev/install.sh | sh
     sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
 fi
