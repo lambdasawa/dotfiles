@@ -91,7 +91,6 @@ setup-brew() {
         jless \
         gron \
         jc \
-        mike-engel/jwt-cli/jwt-cli \
         pup \
         mdcat \
         csview \
