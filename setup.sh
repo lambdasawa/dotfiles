@@ -74,7 +74,6 @@ setup-brew() {
         gitui \
         starship \
         docker-compose \
-        direnv \
         zoxide \
         mise \
         watchexec \
