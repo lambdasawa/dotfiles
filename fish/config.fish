@@ -92,12 +92,12 @@ if status is-interactive
     alias j jless
     # alias k ''
     alias l ll
-    # alias m ''
+    alias m msie
     # alias n ''
     # alias o ''
     alias p pnpm
     # alias q ''
-    # alias r ''
+    alias r 'mise run'
     # alias s ''
     alias t task
     # alias u ''
