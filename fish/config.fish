@@ -99,7 +99,7 @@ if status is-interactive
     # alias q ''
     alias r 'mise run'
     # alias s ''
-    alias t task
+    # alias t ''
     # alias u ''
     # alias v ''
     alias w watchexec

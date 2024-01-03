@@ -78,7 +78,6 @@ setup-brew() {
         zoxide \
         mise \
         watchexec \
-        go-task/tap/go-task \
         1password-cli \
         eza \
         bat \
