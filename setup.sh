@@ -21,7 +21,8 @@ intall-mise-conf() {
     ln -sf "$DOTFILES_DIRECTORY/mise/.default-gems" "$HOME/.default-gems"
     ln -sf "$DOTFILES_DIRECTORY/mise/.default-npm-packages" "$HOME/.default-npm-packages"
     ln -sf "$DOTFILES_DIRECTORY/mise/.default-go-packages" "$HOME/.default-go-packages"
-    ln -sf "$DOTFILES_DIRECTORY/mise/.mise.toml" "$HOME/.config/mise/config.toml"
+    ln -sf "$DOTFILES_DIRECTORY/mise/config.toml" "$HOME/.config/mise/config.toml"
+    ln -sf "$DOTFILES_DIRECTORY/mise/settings.toml" "$HOME/.config/mise/settings.toml"
 }
 
 install-starship-conf() {

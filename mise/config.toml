@@ -7,6 +7,3 @@ go = "1.21.4"
 gradle = "8.4"
 java = "21.0.1"
 terraform = "1.6.3"
-
-[settings]
-experimental = true
