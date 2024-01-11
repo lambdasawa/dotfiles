@@ -92,7 +92,7 @@ if status is-interactive
     alias j jless
     # alias k ''
     alias l ll
-    alias m msie
+    alias m mise
     # alias n ''
     # alias o ''
     alias p pnpm
