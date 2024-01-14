@@ -2,9 +2,29 @@ function fish_greeting
 end
 
 function fish_preexec --on-event fish_preexec
+    set -g _fish_preexec_time (date +%s)
 end
 
 function fish_postexec --on-event fish_postexec
+    set last_status $status
+    set _fish_postexec_time (date +%s)
+    set elapsed_time (math $_fish_postexec_time - $_fish_preexec_time)
+    if [ $elapsed_time -gt 3 ]
+        set message ''
+        if [ $last_status -eq 0 ]
+            set message OK
+        else
+            set message Error
+        end
+
+        if command -v say >/dev/null 2>&1
+            say "$message"
+        end
+
+        if command -v osascript >/dev/null 2>&1
+            osascript -e (printf 'display notification "%s" with title "fish"' "$message")
+        end
+    end
 end
 
 function ll
