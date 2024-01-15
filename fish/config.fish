@@ -17,12 +17,16 @@ function fish_postexec --on-event fish_postexec
             set message Error
         end
 
-        if command -v say >/dev/null 2>&1
-            say "$message"
+        if [ -e ~/.fish_postexec_say ]
+            if command -v say >/dev/null 2>&1
+                say "$message"
+            end
         end
 
-        if command -v osascript >/dev/null 2>&1
-            osascript -e (printf 'display notification "%s" with title "fish"' "$message")
+        if [ -e ~/.fish_postexec_desktop_notification ]
+            if command -v osascript >/dev/null 2>&1
+                osascript -e (printf 'display notification "%s" with title "fish"' "$message")
+            end
         end
     end
 end
