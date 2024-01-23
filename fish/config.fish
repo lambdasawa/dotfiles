@@ -50,10 +50,14 @@ function cd
     ll
 end
 
-function md
+function zd
     set d "$argv"
     mkdir -p $d
-    cd $d
+    z $d
+end
+
+function zr
+    z $(repo)
 end
 
 function cc
