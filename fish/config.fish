@@ -39,42 +39,51 @@ function ll
     end
 end
 
-function cd
+function cd-mkdir-ll
     set d "$argv"
     if [ -z "$argv" ]
-        set d (fd --type d | filter)
+        set d (fd --type d | sk)
     end
 
-    builtin cd "$d"
+    cd "$d"
+
+    mkdir -p $d
 
     ll
 end
 
-function zd
-    set d "$argv"
-    mkdir -p $d
-    z $d
+function tmp
+    set dir $HOME/tmp/(now)
+    mkdir -p $dir
+    cd $dir
 end
 
-function zr
-    z $(repo)
-end
-
-function cc
-    if command -v pbcopy >/dev/null 2>&1
-        cat | pbcopy
-    end
-end
-
-function cv
-    if command -v pbpaste >/dev/null 2>&1
-        pbpaste
-    end
+function sbx
+    set name "$argv[1]"
+    set dir $HOME/src/github.com/lambdasawa/sandbox/$name
+    mkdir -p $dir
+    cd $dir
 end
 
 function kill-by-port
     set port "$argv[1]"
     kill (lsof -i "tcp:$port" | grep -v PID | awk '{print $2}')
+end
+
+function R
+    z $(repo)
+end
+
+function C
+    if command -v pbcopy >/dev/null 2>&1
+        cat | pbcopy
+    end
+end
+
+function V
+    if command -v pbpaste >/dev/null 2>&1
+        pbpaste
+    end
 end
 
 if status is-interactive
@@ -108,6 +117,7 @@ if status is-interactive
         set -gx EDITOR vim
     end
 
+    alias , cd-mkdir-ll
     # alias a ''
     # alias b ''
     alias c 'docker compose'
