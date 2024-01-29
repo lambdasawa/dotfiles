@@ -39,16 +39,14 @@ function ll
     end
 end
 
-function cd-mkdir-ll
+function mkdir-cd-ll
     set d "$argv"
     if [ -z "$argv" ]
         set d (fd --type d | sk)
     end
 
-    cd "$d"
-
     mkdir -p $d
-
+    cd "$d"
     ll
 end
 
@@ -117,7 +115,7 @@ if status is-interactive
         set -gx EDITOR vim
     end
 
-    alias , cd-mkdir-ll
+    alias , mkdir-cd-ll
     # alias a ''
     # alias b ''
     alias c 'docker compose'
