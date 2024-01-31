@@ -113,5 +113,5 @@ format = "[py:$version]($style) "
 format = "[dart:$version]($style) "
 
 [character]
-error_symbol = "[|>](red)"
-success_symbol = "[|>](green)"
+error_symbol = "[\\$](red)"
+success_symbol = "[\\$](green)"
