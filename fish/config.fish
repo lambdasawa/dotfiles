@@ -39,6 +39,11 @@ function ll
     end
 end
 
+function cd
+    command cd "$d"
+    ll
+end
+
 function mkdir-cd-ll
     set d "$argv"
     if [ -z "$argv" ]
