@@ -40,7 +40,7 @@ function ll
 end
 
 function cd
-    command cd "$d"
+    builtin cd "$argv[1]"
     ll
 end
 
