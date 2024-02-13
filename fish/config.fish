@@ -106,13 +106,13 @@ if status is-interactive
         mise activate fish | source
     end
 
-    fish_add_path /usr/local/bin
-    fish_add_path ~/.local/bin
-    fish_add_path ~/bin
-    fish_add_path ~/dotfiles/bin
-    fish_add_path ~/Library/Android/sdk/platform-tools/
-    fish_add_path ~/Library/Android/sdk/tools/bin/
-    fish_add_path "/Applications/IntelliJ IDEA.app/Contents/MacOS/"
+    fish_add_path "/usr/local/bin"
+    fish_add_path "$HOME/.local/bin"
+    fish_add_path "$HOME/bin"
+    fish_add_path "$HOME/dotfiles/bin"
+    fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+    fish_add_path "$HOME/Library/Android/sdk/platform-tools"
+    fish_add_path "$HOME/Library/Android/sdk/tools/bin"
 
     if which code >/dev/null 2>&1
         set -gx EDITOR "code --wait"
