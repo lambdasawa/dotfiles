@@ -62,7 +62,7 @@ setup-brew() {
         aws-vault \
         session-manager-plugin \
         google-cloud-sdk \
-        intellij-idea \
+        jetbrains-toolbox \
         raycast \
         slack \
         homebrew/cask-fonts/font-jetbrains-mono \
