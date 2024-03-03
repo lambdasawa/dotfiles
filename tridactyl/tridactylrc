@@ -10,12 +10,6 @@ set theme lambdasawa
 
 command feedly-search         js -r js/feedly-search.js
 command twitter-intent-open   js -r js/twitter-intent-open.js
-command eval-on-all-tabs      js -r js/eval-on-all-tabs.js
-command container-import      js -r js/container-import.js
-command container-delete-all  js -r js/container-delete-all.js
-command container-open-all    js -r js/container-open-all.js
-command container-view-active js -r js/container-view-active.js
-command httpbin-cookie        js -r js/httpbin-cookie.js
 
 # https://github.com/tridactyl/tridactyl/blob/1.24.0/src/lib/config.ts
 bind I mode ignore
@@ -36,5 +30,7 @@ bind ,r source
 bind ,f feedly-search
 bind ,t twitter-intent-open
 bind ,m clipboard yankmd
+bind ,d tabduplicate
+bind ,c fillcmdline recontain
 
 js alert('tri ok')
