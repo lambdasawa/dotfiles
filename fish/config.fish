@@ -73,17 +73,17 @@ function kill-by-port
     kill (lsof -i "tcp:$port" | grep -v PID | awk '{print $2}')
 end
 
-function R
+function cd-repo
     z $(repo)
 end
 
-function C
+function clipboard-copy
     if command -v pbcopy >/dev/null 2>&1
         cat | pbcopy
     end
 end
 
-function V
+function clipboard-paste
     if command -v pbpaste >/dev/null 2>&1
         pbpaste
     end
@@ -121,6 +121,9 @@ if status is-interactive
     end
 
     alias , mkdir-cd-ll
+    alias ,r cd-repo
+    alias ,c clipboard-copy
+    alias ,v clipboard-paste
     # alias a ''
     # alias b ''
     alias c 'docker compose'
