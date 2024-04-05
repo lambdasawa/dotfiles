@@ -108,6 +108,7 @@ if status is-interactive
 
     fish_add_path "/usr/local/bin"
     fish_add_path "$HOME/.local/bin"
+    fish_add_path "$HOME/.rd/bin"
     fish_add_path "$HOME/bin"
     fish_add_path "$HOME/dotfiles/bin"
     fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
