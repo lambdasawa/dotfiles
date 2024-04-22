@@ -1,5 +1,7 @@
 yarn
 pnpm
+textlint
+@biomejs/biome
 prettier
 vite
 quicktype
