@@ -114,7 +114,7 @@ if status is-interactive
         mise activate fish | source
     end
 
-    fish_add_path "/usr/local/bin"
+    fish_add_path /usr/local/bin
     fish_add_path "$HOME/.local/bin"
     fish_add_path "$HOME/.rd/bin"
     fish_add_path "$HOME/bin"
