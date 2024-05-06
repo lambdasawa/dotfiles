@@ -150,7 +150,7 @@ if status is-interactive
     # alias o ''
     alias p pnpm
     # alias q ''
-    alias r 'mise run'
+    alias r realpath
     # alias s ''
     # alias t ''
     # alias u ''
@@ -178,6 +178,7 @@ if status is-interactive
     alias pull "git pull"
     alias review='gh pr list -S "review-requested:@me" | awk "{print \$1}" | xargs -n 1 gh pr view -w'
     alias ce 'docker compose exec'
+    alias mr 'mise run'
     alias nr 'npm run'
     alias gl gradle
     alias irg "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
