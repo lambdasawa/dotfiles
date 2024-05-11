@@ -1,0 +1,21 @@
+[
+	{ "text": "lambdasawa", "name": "me" },
+	{ "text": "lambdasawa@gmail.com", "name": "mail main", "keyword": "!mail" },
+	{ "text": "lambdasawa@wearehackerone.com", "name": "mail hackerone" },
+	{ "text": "lambdasawa@bugcrowdninja.com", "name": "mail bugcrowd" },
+	{ "name": "mail firefox relay", "text": "l1b4cfedg@mozmail.com" },
+	{
+		"name": "x-www-form-urlencoded",
+		"text": "application/x-www-form-urlencoded"
+	},
+	{
+		"name": "json",
+		"text": "application/json; charset=UTF-8"
+	},
+	{ "text": "{uuid}", "keyword": "!id", "name": "uuid" },
+	{
+		"name": "rfc3339",
+		"text": "{date format=\"yyyy-MM-dd'T'HH:mm:ssZ\"}",
+		"keyword": "!now"
+	}
+]
