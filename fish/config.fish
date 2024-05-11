@@ -161,6 +161,8 @@ if status is-interactive
     # alias z zoxide
     alias today 'date "+%Y-%m-%d"'
     alias now 'date "+%Y-%m-%d-%H-%M-%S"'
+    alias ca 'code -a'
+    alias cr 'code -r'
     alias gx gitui
     alias toplevel 'git rev-parse --show-toplevel'
     alias branch 'git branch --format="%(refname:short)" | sk'
@@ -171,7 +173,7 @@ if status is-interactive
     alias pr 'gh pr list | sk | awk "{print \$1}"'
     alias chbranch "git switch"
     alias mkbranch "git switch -C"
-    alias add "git add -p"
+    alias staging "git add -p"
     alias commit "git commit -v"
     alias amend "git commit -v --amend"
     alias push "git push"
