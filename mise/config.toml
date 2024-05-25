@@ -1,3 +1,4 @@
+# mise install
 [tools]
 python = "3.12.3"
 ruby = "3.3.1"
@@ -8,3 +9,27 @@ java = "21.0.1"
 terraform = "1.8.2"
 dotnet = "8.0.204"
 rust = "1.78.0"
+
+## cp .env.example .env
+## touch .envrc.sh
+## mkdir bin/
+## mise trust
+# [env]
+# HOGE = 'fuga'
+# GIT_SHA = "{{exec(command='git rev-parse HEAD')}}"
+# _.file = '.env'
+# _.source = ".envrc.sh"
+# _.path = ["./bin"]
+# _.python.venv = { path = ".venv", create = true }
+
+## mise run
+# [tasks.default]
+# run = """
+# echo "Hello, mise tasks.default!"
+# """
+
+## mise run exec
+## mise watch -t exec
+# [tasks.exec]
+# sources = ['**/*.py']
+# run = "python main.py"
