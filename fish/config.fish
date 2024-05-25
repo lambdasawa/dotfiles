@@ -190,6 +190,7 @@ if status is-interactive
     alias git-root 'git rev-parse --show-toplevel'
     alias git-current-branch 'git rev-parse --abbrev-ref HEAD'
     alias git-default-branch 'basename $(git symbolic-ref refs/remotes/origin/HEAD)'
+    alias gitignore 'curl -sSL https://raw.githubusercontent.com/github/gitignore/main/$(curl -sSL "https://api.github.com/repos/github/gitignore/git/trees/main" | jq -r ".tree[] .path" | grep .gitignore | sk)'
     alias gx gitui
     alias ga. 'git add .'
     alias gap 'git add -p'
