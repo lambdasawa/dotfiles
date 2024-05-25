@@ -129,20 +129,20 @@ if status is-interactive
     end
 
     # alias a ''
-    # alias b ''
+    alias b bat
     alias c 'docker compose'
     alias d docker
     alias e code
-    # alias f ''
+    alias f broot
     alias g git
-    # alias h ''
+    alias h hexyl
     alias i "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
     alias j jless
     # alias k ''
     alias l ll
     alias m mise
     # alias n ''
-    # alias o ''
+    alias o ouch
     alias p realpath
     # alias q ''
     # alias r ''
@@ -176,8 +176,9 @@ if status is-interactive
     alias ,v clipboard-paste
 
     alias ,g gitui
-    alias ,gs "git switch"
-    alias ,gsc "git switch -C"
+    alias ,gl 'git log -p'
+    alias ,gs 'git switch'
+    alias ,gsc 'git switch -C'
     alias ,ga 'git add .'
     alias ,gap 'git add -p'
     alias ,gs "git stash"
@@ -192,4 +193,11 @@ if status is-interactive
     alias ,gdefault-branch 'basename $(git symbolic-ref refs/remotes/origin/HEAD)'
     alias ,grebase 'git fetch origin $(basename $(git symbolic-ref refs/remotes/origin/HEAD)) && git rebase origin'
     alias ,gignore 'curl -sSL https://raw.githubusercontent.com/github/gitignore/main/$(curl -sSL "https://api.github.com/repos/github/gitignore/git/trees/main" | jq -r ".tree[] .path" | grep .gitignore | sk)'
+
+    alias ip-local 'ifconfig | jc --ifconfig | jq -r \'.[] | select(.name == "en0") | .ipv4_addr\''
+    alias ip-global 'curl -sSL https://checkip.amazonaws.com/'
+
+    alias uu uuidgen
+    alias random-alnum 'cat /dev/urandom | LC_ALL=C tr -dc A-Za-z0-9 | head -c 32'
+    alias random-ascii 'cat /dev/urandom | LC_ALL=C tr -dc "[:print:]" | head -c 32'
 end
