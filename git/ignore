@@ -1,2 +1,4 @@
+.local/
+.mise.local
 .env*
 .idea/
