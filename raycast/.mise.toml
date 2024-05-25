@@ -1,0 +1,15 @@
+[tasks.default]
+run = "mise watch -t setup"
+
+[tasks.setup]
+sources = ["./snippets.yaml", "./script-commands/"]
+run = """
+mkdir -p ~/.raycast/
+
+cat ~/dotfiles/raycast/snippets.yaml | jc --yaml | jq '.[]' | tee ~/.raycast/snippets.json
+
+mkdir -p ~/.raycast/script-commands/
+for path in $(find ~/dotfiles/raycast/script-commands -type f); do
+    ln -sf $path ~/.raycast/script-commands/
+done
+"""
