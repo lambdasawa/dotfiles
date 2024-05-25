@@ -10,6 +10,9 @@ terraform = "1.8.2"
 dotnet = "8.0.204"
 rust = "1.78.0"
 
+[settings]
+experimental = true
+
 ## cp .env.example .env
 ## touch .envrc.sh
 ## mkdir bin/
