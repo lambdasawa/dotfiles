@@ -2,3 +2,5 @@
 .mise.local
 .env*
 .idea/
+.DS_Store
+__MACOSX
