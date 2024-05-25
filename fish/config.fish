@@ -55,15 +55,12 @@ function mkdir-cd-ll
     ll
 end
 
-function tmp
-    set dir $HOME/tmp/(now)
-    mkdir -p $dir
-    cd $dir
+function cd-repo
+    z $(ghq list -p | sk)
 end
 
-function sbx
-    set name "$argv[1]"
-    set dir $HOME/src/github.com/lambdasawa/sandbox/$name
+function tmp
+    set dir $HOME/tmp/(now)
     mkdir -p $dir
     cd $dir
 end
@@ -71,10 +68,6 @@ end
 function kill-by-port
     set port "$argv[1]"
     kill (lsof -i "tcp:$port" | grep -v PID | awk '{print $2}')
-end
-
-function cd-repo
-    z $(ghq list -p | sk)
 end
 
 function clipboard-copy
@@ -135,10 +128,6 @@ if status is-interactive
         set -gx EDITOR vim
     end
 
-    alias , mkdir-cd-ll
-    alias ,r cd-repo
-    alias ,c clipboard-copy
-    alias ,v clipboard-paste
     # alias a ''
     # alias b ''
     alias c 'docker compose'
@@ -147,16 +136,16 @@ if status is-interactive
     # alias f ''
     alias g git
     # alias h ''
-    # alias i ''
+    alias i "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
     alias j jless
     # alias k ''
     alias l ll
     alias m mise
     # alias n ''
     # alias o ''
-    alias p pnpm
+    alias p realpath
     # alias q ''
-    alias r realpath
+    # alias r ''
     # alias s ''
     # alias t ''
     # alias u ''
@@ -166,8 +155,7 @@ if status is-interactive
     alias y yarn
     # alias z zoxide
 
-    alias tree 'eza -T'
-    alias irg "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
+    alias tree 'eza --tree --all --git-ignore'
 
     alias today 'date "+%Y-%m-%d"'
     alias now 'date "+%Y-%m-%d-%H-%M-%S"'
@@ -182,22 +170,26 @@ if status is-interactive
 
     alias nr 'npm run'
 
-    alias gl gradle
+    alias , mkdir-cd-ll
+    alias ,r cd-repo
+    alias ,c clipboard-copy
+    alias ,v clipboard-paste
 
-    alias git-branch 'git branch --format="%(refname:short)" | sk'
-    alias git-rebase 'git fetch origin $(basename $(git symbolic-ref refs/remotes/origin/HEAD)) && git rebase origin'
-    alias git-reflog 'git reflog | sk | awk "{print \$1}"'
-    alias git-root 'git rev-parse --show-toplevel'
-    alias git-current-branch 'git rev-parse --abbrev-ref HEAD'
-    alias git-default-branch 'basename $(git symbolic-ref refs/remotes/origin/HEAD)'
-    alias gitignore 'curl -sSL https://raw.githubusercontent.com/github/gitignore/main/$(curl -sSL "https://api.github.com/repos/github/gitignore/git/trees/main" | jq -r ".tree[] .path" | grep .gitignore | sk)'
-    alias gx gitui
-    alias ga. 'git add .'
-    alias gap 'git add -p'
-    alias gs "git stash"
-    alias gc 'git commit -v'
-    alias gs "git switch"
-    alias gsc "git switch -C"
-    alias gps 'git push'
-    alias gpl 'git pull'
+    alias ,g gitui
+    alias ,gs "git switch"
+    alias ,gsc "git switch -C"
+    alias ,ga 'git add .'
+    alias ,gap 'git add -p'
+    alias ,gs "git stash"
+    alias ,gc 'git commit -v'
+    alias ,gu 'git push'
+    alias ,gd 'git pull'
+    alias ,gbranch 'git branch --format="%(refname:short)" | sk'
+    alias ,greflog 'git reflog | sk | awk "{print \$1}"'
+    alias ,groot 'git rev-parse --show-toplevel'
+    alias ,gtop 'git rev-parse --show-toplevel'
+    alias ,gcurrent-branch 'git rev-parse --abbrev-ref HEAD'
+    alias ,gdefault-branch 'basename $(git symbolic-ref refs/remotes/origin/HEAD)'
+    alias ,grebase 'git fetch origin $(basename $(git symbolic-ref refs/remotes/origin/HEAD)) && git rebase origin'
+    alias ,gignore 'curl -sSL https://raw.githubusercontent.com/github/gitignore/main/$(curl -sSL "https://api.github.com/repos/github/gitignore/git/trees/main" | jq -r ".tree[] .path" | grep .gitignore | sk)'
 end
