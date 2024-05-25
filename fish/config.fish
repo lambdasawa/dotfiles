@@ -74,7 +74,7 @@ function kill-by-port
 end
 
 function cd-repo
-    z $(repo)
+    z $(ghq list -p | sk)
 end
 
 function clipboard-copy
@@ -159,30 +159,38 @@ if status is-interactive
     alias x xargs
     alias y yarn
     # alias z zoxide
+
+    alias tree 'eza -T'
+    alias irg "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
+
     alias today 'date "+%Y-%m-%d"'
     alias now 'date "+%Y-%m-%d-%H-%M-%S"'
-    alias ca 'code -a'
-    alias cr 'code -r'
-    alias gx gitui
-    alias toplevel 'git rev-parse --show-toplevel'
-    alias branch 'git branch --format="%(refname:short)" | sk'
-    alias current-branch 'git rev-parse --abbrev-ref HEAD'
-    alias default-branch 'basename $(git symbolic-ref refs/remotes/origin/HEAD)'
-    alias reflog 'git reflog | sk | awk "{print \$1}"'
-    alias repo 'ghq list -p | sk'
-    alias pr 'gh pr list | sk | awk "{print \$1}"'
-    alias chbranch "git switch"
-    alias mkbranch "git switch -C"
-    alias staging "git add -p"
-    alias commit "git commit -v"
-    alias amend "git commit -v --amend"
-    alias push "git push"
-    alias pull "git pull"
-    alias review='gh pr list -S "review-requested:@me" | awk "{print \$1}" | xargs -n 1 gh pr view -w'
+
+    alias ca 'code -a .'
+    alias cr 'code -r .'
+
     alias ce 'docker compose exec'
-    alias mr 'mise run'
+
+    alias mr 'mise run --'
+    alias mw 'mise watch -t'
+
     alias nr 'npm run'
+
     alias gl gradle
-    alias irg "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
-    alias tree 'eza -T'
+
+    alias git-branch 'git branch --format="%(refname:short)" | sk'
+    alias git-rebase 'git fetch origin $(basename $(git symbolic-ref refs/remotes/origin/HEAD)) && git rebase origin'
+    alias git-reflog 'git reflog | sk | awk "{print \$1}"'
+    alias git-root 'git rev-parse --show-toplevel'
+    alias git-current-branch 'git rev-parse --abbrev-ref HEAD'
+    alias git-default-branch 'basename $(git symbolic-ref refs/remotes/origin/HEAD)'
+    alias gx gitui
+    alias ga. 'git add .'
+    alias gap 'git add -p'
+    alias gs "git stash"
+    alias gc 'git commit -v'
+    alias gs "git switch"
+    alias gsc "git switch -C"
+    alias gps 'git push'
+    alias gpl 'git pull'
 end
