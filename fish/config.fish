@@ -97,6 +97,12 @@ function mise-upgrade
     end
 end
 
+function kill-ds-store
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+    killall Finder
+    echo "find ~ -name .DS_Store -delete"
+end
+
 if status is-interactive
     if [ -e /opt/homebrew/bin/brew ]
         eval "$(/opt/homebrew/bin/brew shellenv)"
