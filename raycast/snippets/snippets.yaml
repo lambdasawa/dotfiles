@@ -1,0 +1,59 @@
+- name: me
+  keyword: "!id"
+  text: lambdasawa
+
+- name: mail main
+  keyword: "!mail"
+  text: lambdasawa{cursor}@gmail.com
+
+- name: mail hackerone
+  text: lambdasawa{cursor}@wearehackerone.com
+
+- name: mail bugcrowd
+  text: lambdasawa{cursor}@bugcrowdninja.com
+
+- name: mail firefox relay
+  text: l1b4cfedg{cursor}@mozmail.com
+
+- name: uuid
+  keyword: "!uu"
+  text: "{uuid}"
+
+- name: rfc3339-iso8601
+  keyword: "!now"
+  text: '{date format="yyyy-MM-dd''T''HH:mm:ssZ"}'
+
+- name: ghm-note
+  text: |
+    > [!NOTE]
+    > {cursor}
+
+- name: ghm-tip
+  text: |
+    > [!TIP]
+    > {cursor}
+
+- name: ghm-important
+  text: |-
+    > [!IMPORTANT]
+    > {cursor}
+
+- name: ghm-warn
+  text: |
+    > [!WARNING]
+    > {cursor}
+
+- name: ghm-cation
+  text: |
+    > [!CAUTION]
+    > {cursor}
+
+- name: mime-type-form
+  text: "Content-Type: application/x-www-form-urlencoded"
+
+- name: mime-type-json
+  text: "Content-Type: application/json; charset=UTF-8"
+
+- name: prompt-in-japanese
+  keyword: "!ja"
+  text: "要約せずに日本語に翻訳してください。"

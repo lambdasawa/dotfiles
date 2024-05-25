@@ -1,0 +1,6 @@
+[tasks.default]
+run = "mise watch -t build"
+
+[tasks.build]
+sources = ["*.yaml"]
+run = "cat snippets.yaml | jc --yaml | jq '.[]' | tee snippets.json"
