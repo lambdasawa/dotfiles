@@ -2,12 +2,12 @@
 [tools]
 python = "3.12.3"
 ruby = "3.3.1"
-node = "22.1.0"
-go = "1.22.2"
+node = "22.2.0"
+go = "1.22.3"
 gradle = "8.7"
-java = "21.0.1"
-terraform = "1.8.2"
-dotnet = "8.0.204"
+java = "23.0.0-loom+2-48"
+terraform = "1.8.4"
+dotnet = "8.0.300"
 rust = "1.78.0"
 
 [settings]
