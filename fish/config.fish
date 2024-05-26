@@ -167,6 +167,7 @@ if status is-interactive
 
     alias mr 'mise run --'
     alias mw 'mise watch -t'
+    alias mise-init 'cp ~/dotfiles/mise/config.toml .mise.toml && code .mise.toml'
 
     alias nr 'npm run'
 
