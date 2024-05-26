@@ -200,4 +200,7 @@ if status is-interactive
     alias uu uuidgen
     alias random-alnum 'cat /dev/urandom | LC_ALL=C tr -dc A-Za-z0-9 | head -c 32'
     alias random-ascii 'cat /dev/urandom | LC_ALL=C tr -dc "[:print:]" | head -c 32'
+
+    alias md mdcat
+    alias csv csview
 end
