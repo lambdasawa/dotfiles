@@ -65,6 +65,12 @@ function tmp
     cd $dir
 end
 
+function scratch
+    set dir $HOME/src/github.com/lambdasawa/sandbox/scratch-$(now)
+    mkdir -p $dir
+    cd $dir
+end
+
 function kill-by-port
     set port "$argv[1]"
     kill (lsof -i "tcp:$port" | grep -v PID | awk '{print $2}')
