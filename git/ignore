@@ -1,5 +1,5 @@
 .local/
-.mise.local
+.mise.local.toml
 .env*
 .idea/
 .DS_Store
