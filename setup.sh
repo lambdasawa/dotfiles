@@ -72,7 +72,7 @@ setup-brew() {
         fish \
         gh \
         ghq \
-        gitui \
+        lazygit \
         starship \
         docker-compose \
         zoxide \

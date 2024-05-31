@@ -182,7 +182,7 @@ if status is-interactive
     alias ,c clipboard-copy
     alias ,v clipboard-paste
 
-    alias ,g gitui
+    alias ,g lazygit
     alias ,gl 'git log -p'
     alias ,gs 'git switch'
     alias ,gsc 'git switch -C'
