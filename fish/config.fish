@@ -79,6 +79,7 @@ end
 function clipboard-copy
     if command -v pbcopy >/dev/null 2>&1
         cat | pbcopy
+        pbpaste
     end
 end
 
@@ -200,7 +201,8 @@ if status is-interactive
     alias ,grebase 'git fetch origin $(basename $(git symbolic-ref refs/remotes/origin/HEAD)) && git rebase origin'
     alias ,gignore 'curl -sSL https://raw.githubusercontent.com/github/gitignore/main/$(curl -sSL "https://api.github.com/repos/github/gitignore/git/trees/main" | jq -r ".tree[] .path" | grep .gitignore | sk)'
 
-    alias ip-local 'ifconfig | jc --ifconfig | jq -r \'.[] | select(.name == "en0") | .ipv4_addr\''
+    alias ,ifconfig 'ifconfig | jc --ifconfig'
+    alias ip-local 'ifconfig | jc --ifconfig | jq -r \'.[] | .ipv4_addr\''
     alias ip-global 'curl -sSL https://checkip.amazonaws.com/'
 
     alias uu uuidgen
