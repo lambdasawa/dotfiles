@@ -140,7 +140,7 @@ if status is-interactive
     alias d docker
     alias e code
     alias f broot
-    alias g git
+    alias g lazygit
     alias h hexyl
     alias i "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
     alias j jless
@@ -182,7 +182,6 @@ if status is-interactive
     alias ,c clipboard-copy
     alias ,v clipboard-paste
 
-    alias ,g lazygit
     alias ,gl 'git log -p'
     alias ,gs 'git switch'
     alias ,gsc 'git switch -C'
