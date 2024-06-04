@@ -190,8 +190,8 @@ if status is-interactive
     alias ,gap 'git add -p'
     alias ,gs "git stash"
     alias ,gc 'git commit -v'
-    alias ,gu 'git push'
-    alias ,gd 'git pull'
+    alias ,gP 'git push'
+    alias ,gp 'git pull'
     alias ,gbranch 'git branch --format="%(refname:short)" | sk'
     alias ,greflog 'git reflog | sk | awk "{print \$1}"'
     alias ,groot 'git rev-parse --show-toplevel'
