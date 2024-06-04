@@ -48,12 +48,55 @@
     > [!CAUTION]
     > {cursor}
 
-- name: mime-type-form
-  text: "Content-Type: application/x-www-form-urlencoded"
+- name: mime-multipart
+  text: multipart/form-data; boundary="boundaryXXXX"
+
+- name: mime-multipart-body
+  text: |
+    --boundaryXXXX
+    Content-Disposition: form-data; name="field1"
+
+    value1
+    --boundaryXXXX
+    Content-Disposition: form-data; name="field2"; filename="example.txt"
+
+    value2
+    --boundaryXXXX--
 
 - name: mime-type-json
-  text: "Content-Type: application/json; charset=UTF-8"
+  text: "application/json; charset=UTF-8"
 
 - name: prompt-in-japanese
   keyword: "!ja"
-  text: "要約せずに日本語に翻訳してください。"
+  text: "translate in japanese"
+
+- name: mise-template
+  text: |
+    # [tools]
+    # python = "3.12.3"
+    # ruby = "3.3.1"
+    # node = "22.2.0"
+    # go = "1.22.3"
+    # gradle = "8.7"
+    # java = "23.0.0-loom+2-48"
+    # terraform = "1.8.4"
+    # dotnet = "8.0.300"
+    # rust = "1.78.0"
+
+    # [env]
+    # HOGE = 'fuga'
+    # GIT_SHA = "{{exec(command='git rev-parse HEAD 2>/dev/null || true')}}"
+    # _.file = '.env'
+    # _.source = ".envrc.sh"
+    # _.path = ["./bin"]
+    # _.python.venv = { path = ".venv", create = true }
+
+    # [tasks.default]
+    # run = """
+    # set -xeuo pipefail
+    # echo "Hello, mise tasks.default!"
+    # """
+
+    # [tasks.exec]
+    # sources = ['**/*.py']
+    # run = "python main.py"
