@@ -86,12 +86,14 @@
     # [env]
     # HOGE = 'fuga'
     # GIT_SHA = "{{exec(command='git rev-parse HEAD 2>/dev/null || true')}}"
+    # PROJECT_NAME = "{{config_root | split(pat='/') | last}}"
     # _.file = '.env'
     # _.source = ".envrc.sh"
     # _.path = ["./bin"]
     # _.python.venv = { path = ".venv", create = true }
 
     # [tasks.default]
+    # dir = "{{config_root}}"
     # run = """
     # set -xeuo pipefail
     # echo "Hello, mise tasks.default!"
