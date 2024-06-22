@@ -85,6 +85,7 @@ setup-brew() {
         git-delta \
         ripgrep \
         fd \
+        pueue \
         broot \
         sd \
         sk \
