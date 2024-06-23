@@ -184,6 +184,7 @@ if status is-interactive
     alias ,c clipboard-copy
     alias ,v clipboard-paste
 
+    alias gg 'ghq get'
     alias ,gl 'git log -p'
     alias ,gs 'git switch'
     alias ,gsc 'git switch -C'
