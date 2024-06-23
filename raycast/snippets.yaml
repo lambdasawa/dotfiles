@@ -34,7 +34,7 @@
     > {cursor}
 
 - name: ghm-important
-  text: |-
+  text: |
     > [!IMPORTANT]
     > {cursor}
 
@@ -48,8 +48,17 @@
     > [!CAUTION]
     > {cursor}
 
+- name: mime-type-json
+  text: |-
+    Content-Type: application/json
+
+- name: mime-type-form
+  text: |-
+    Content-Type: application/x-www-form-urlencoded
+
 - name: mime-multipart
-  text: multipart/form-data; boundary="boundaryXXXX"
+  text: |-
+    Content-Type: multipart/form-data; boundary="boundaryXXXX"
 
 - name: mime-multipart-body
   text: |
@@ -62,9 +71,6 @@
 
     value2
     --boundaryXXXX--
-
-- name: mime-type-json
-  text: "application/json; charset=UTF-8"
 
 - name: prompt-in-japanese
   keyword: "!ja"
@@ -102,3 +108,14 @@
     # [tasks.exec]
     # sources = ['**/*.py']
     # run = "python main.py"
+
+- name: semgrep
+  text: |
+    # https://semgrep.dev/docs/writing-rules/rule-syntax
+    rules:
+      - id: test
+        message: test
+        severity: ERROR
+        languages: [python]
+        patterns:
+          - pattern: test(...)
