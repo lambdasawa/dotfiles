@@ -9,6 +9,8 @@ java = "23.0.0-loom+2-48"
 terraform = "1.8.4"
 dotnet = "8.0.300"
 rust = "1.78.0"
+dart = "latest"
+flutter = "latest"
 
 [settings]
 experimental = true
