@@ -38,6 +38,9 @@ cmd = difft "$LOCAL" "$REMOTE"
 [push]
 autoSetupRemote = true
 
+[pull]
+	rebase = true
+
 [merge]
 conflictstyle = diff3
 
