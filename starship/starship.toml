@@ -12,7 +12,6 @@ format = """\
   $battery\
   $memory_usage\
   $cmd_duration\
-  $time\
   $aws\
   $gcloud\
   $kubernetes\
