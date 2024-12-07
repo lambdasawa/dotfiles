@@ -58,7 +58,6 @@ setup-brew() {
         google-chrome \
         wezterm \
         visual-studio-code \
-        docker \
         aws-vault \
         session-manager-plugin \
         google-cloud-sdk \
