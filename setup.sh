@@ -66,7 +66,11 @@ setup-brew() {
         raycast \
         slack \
         homebrew/cask-fonts/font-jetbrains-mono \
-        google-japanese-ime
+        google-japanese-ime \
+        chatgpt \
+        claude \
+        ngrok \
+        mitmproxy
 
     brew install \
         fish \
@@ -90,6 +94,7 @@ setup-brew() {
         sd \
         sk \
         jq \
+        yq \
         jless \
         gron \
         jc \
