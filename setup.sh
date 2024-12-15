@@ -105,6 +105,7 @@ setup-brew() {
         hexyl \
         ouch \
         xh \
+        dufs \
         k6 \
         mitmproxy \
         mysql \
