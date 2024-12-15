@@ -1,16 +1,16 @@
 # mise install
 [tools]
-terraform = "1.9.8"
-dotnet = "8.0.403"
-rust = "1.82.0"
-dart = "latest"
-flutter = "3.24.4-stable"
-python = "3.13.0"
+terraform = "1.10.2"
+dotnet = "9.0.101"
+rust = "1.83.0"
+dart = "3.6.0"
+flutter = "3.27.0-stable"
+python = "3.13.1"
 ruby = "3.3.6"
-node = "23.1.0"
-go = "1.23.2"
-gradle = "8.10.2"
-java = "24.0.0-loom+4-42"
+node = "23.4.0"
+go = "1.23.4"
+gradle = "8.11.1"
+java = "23.0.1"
 
 [settings]
 experimental = true
