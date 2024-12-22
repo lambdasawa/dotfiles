@@ -124,6 +124,8 @@ setup-brew() {
         awscli \
         awscurl \
         scrcpy \
+        apktool \
+        android-commandlinetools \
         yt-dlp
 }
 
