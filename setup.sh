@@ -64,7 +64,6 @@ setup-brew() {
         jetbrains-toolbox \
         raycast \
         slack \
-        homebrew/cask-fonts/font-jetbrains-mono \
         google-japanese-ime \
         chatgpt \
         claude \
@@ -80,6 +79,7 @@ setup-brew() {
         docker-compose \
         zoxide \
         mise \
+        asdf \
         watchexec \
         1password-cli \
         eza \
@@ -87,6 +87,8 @@ setup-brew() {
         difftastic \
         git-delta \
         ripgrep \
+        semgrep \
+        ast-grep \
         fd \
         pueue \
         broot \
@@ -108,6 +110,8 @@ setup-brew() {
         dufs \
         k6 \
         mitmproxy \
+        openvpn \
+        openssl \
         mysql \
         postgresql@14 \
         sqldef/sqldef/mysqldef \
@@ -116,6 +120,7 @@ setup-brew() {
         ffmpeg \
         mpv \
         sox \
+        uv \
         awscli \
         awscurl \
         scrcpy \
