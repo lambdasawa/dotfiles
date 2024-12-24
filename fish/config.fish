@@ -39,12 +39,16 @@ function ll
     end
 end
 
+function ripgrep-delta
+    rg --json -C 2 $argv | delta
+end
+
 function cd
     builtin cd "$argv[1]"
     ll
 end
 
-function mkdir-cd-ll
+function mkdir-cd
     set d "$argv"
     if [ -z "$argv" ]
         set d (fd --type d | sk)
@@ -52,7 +56,6 @@ function mkdir-cd-ll
 
     mkdir -p $d
     cd "$d"
-    ll
 end
 
 function cd-repo
@@ -60,15 +63,9 @@ function cd-repo
 end
 
 function tmp
-    set dir $HOME/tmp/(now)
-    mkdir -p $dir
-    cd $dir
-end
-
-function scratch
-    set dir $HOME/src/github.com/lambdasawa/sandbox/scratch-$(now)
-    mkdir -p $dir
-    cd $dir
+    set dir $(mktemp -d)
+    wezterm cli spawn --cwd "$dir"
+    code -a "$dir"
 end
 
 function kill-by-port
@@ -142,26 +139,26 @@ if status is-interactive
     alias c 'docker compose'
     alias d docker
     alias e code
-    alias f broot
+    # alias f ''
     alias g lazygit
-    alias h hexyl
+    # alias h ''
     alias i "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
     alias j jless
     # alias k ''
     alias l ll
     alias m mise
     # alias n ''
-    alias o ouch
+    # alias o ''
     alias p realpath
     # alias q ''
-    # alias r ''
+    alias r ripgrep-delta
     # alias s ''
     # alias t ''
     # alias u ''
     # alias v ''
     alias w watchexec
     alias x xargs
-    alias y yarn
+    # alias y ''
     # alias z zoxide
 
     alias tree 'eza --tree --all --git-ignore'
@@ -180,7 +177,7 @@ if status is-interactive
 
     alias nr 'npm run'
 
-    alias , mkdir-cd-ll
+    alias , mkdir-cd
     alias ,r cd-repo
     alias ,c clipboard-copy
     alias ,v clipboard-paste
@@ -204,8 +201,7 @@ if status is-interactive
     alias ,grebase 'git fetch origin $(basename $(git symbolic-ref refs/remotes/origin/HEAD)) && git rebase origin'
     alias ,gignore 'curl -sSL https://raw.githubusercontent.com/github/gitignore/main/$(curl -sSL "https://api.github.com/repos/github/gitignore/git/trees/main" | jq -r ".tree[] .path" | grep .gitignore | sk)'
 
-    alias ,ifconfig 'ifconfig | jc --ifconfig'
-    alias ip-local 'ifconfig | jc --ifconfig | jq -r \'.[] | .ipv4_addr\''
+    alias ip-local 'jc ifconfig | jq -r ".[] | [.name, .ipv4_addr] | @csv" | csview -H'
     alias ip-global 'curl -sSL https://checkip.amazonaws.com/'
 
     alias uu uuidgen
