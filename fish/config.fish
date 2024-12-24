@@ -113,8 +113,10 @@ if status is-interactive
         zoxide init fish | source
     end
 
-    if command -v mise >/dev/null 2>&1
+    if [ -e ~/.mise_activate ]
         mise activate fish | source
+    else if [ -e ~/.asdf_activate ]
+        source /opt/homebrew/opt/asdf/libexec/asdf.fish
     end
 
     fish_add_path /usr/local/bin
