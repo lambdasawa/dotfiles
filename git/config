@@ -36,6 +36,9 @@ prompt = false
 [difftool "difftastic"]
 cmd = difft "$LOCAL" "$REMOTE"
 
+[difftool "idea"]
+cmd = open --new --wait-apps -a 'IntelliJ IDEA Ultimate' --args diff $(realpath "$LOCAL") $(realpath "$REMOTE")
+
 [push]
 autoSetupRemote = true
 
