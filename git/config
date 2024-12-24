@@ -27,13 +27,13 @@ diffFilter = delta --color-only
 useBuiltin = false
 
 [diff]
-tool = difftastic
+tool = difft
 colorMoved = default
 
 [difftool]
 prompt = false
 
-[difftool "difftastic"]
+[difftool "difft"]
 cmd = difft "$LOCAL" "$REMOTE"
 
 [difftool "idea"]
