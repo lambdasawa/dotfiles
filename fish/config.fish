@@ -129,6 +129,7 @@ if status is-interactive
     fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
     fish_add_path "$HOME/Library/Android/sdk/platform-tools"
     fish_add_path "$HOME/Library/Android/sdk/tools/bin"
+    fish_add_path $(find $HOME/Library/Android/sdk/build-tools -type d -maxdepth 1 -mindepth 1 2>/dev/null | sort | tail -n1)
 
     if which code >/dev/null 2>&1
         set -gx EDITOR "code --wait"
