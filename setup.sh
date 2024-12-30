@@ -15,7 +15,7 @@ install-fish-conf() {
     ln -sf "$DOTFILES_DIRECTORY/fish/config.fish" "$HOME/.config/fish/config.fish"
 }
 
-intall-mise-conf() {
+install-mise-conf() {
     mkdir -p "$HOME/.config/mise"
     ln -sf "$DOTFILES_DIRECTORY/mise/.default-python-packages" "$HOME/.default-python-packages"
     ln -sf "$DOTFILES_DIRECTORY/mise/.default-gems" "$HOME/.default-gems"
@@ -132,7 +132,7 @@ setup-brew() {
 if [ "$(uname)" == "Darwin" ]; then
     install-git-conf
     install-fish-conf
-    intall-mise-conf
+    install-mise-conf
     install-starship-conf
     install-wezterm-conf
     install-tridactyl-conf
