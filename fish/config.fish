@@ -172,7 +172,7 @@ if status is-interactive
 
     alias ce 'docker compose exec'
 
-    alias mr 'mise run --'
+    alias mr 'mise run'
     alias mw 'mise watch -t'
     alias mise-init 'cp ~/dotfiles/mise/config.toml .mise.toml && code .mise.toml'
 
