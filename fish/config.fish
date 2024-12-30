@@ -65,7 +65,6 @@ end
 function tmp
     set dir $(mktemp -d)
     wezterm cli spawn --cwd "$dir"
-    code -a "$dir"
 end
 
 function kill-by-port
