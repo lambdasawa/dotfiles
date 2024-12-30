@@ -32,5 +32,6 @@ bind ,t twitter-intent-open
 bind ,m clipboard yankmd
 bind ,d tabduplicate
 bind ,c fillcmdline recontain
+unbind <C-x>
 
 js alert('tri ok')
