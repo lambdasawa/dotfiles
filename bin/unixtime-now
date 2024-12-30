@@ -1,4 +1,0 @@
-#!/usr/bin/env node
-
-const date = new Date()
-console.log(Math.floor(date.getTime()/1000));

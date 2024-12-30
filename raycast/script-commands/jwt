@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# @raycast.schemaVersion 1
-# @raycast.title jwt
-# @raycast.mode silent
-# @raycast.packageName dotfiles
-
-wezterm cli spawn --cwd ~/src/github.com/ticarpi/jwt_tool -- fish -c 'mise exec -- python ./jwt_tool.py "$(pbpaste)" 2>/dev/null; exec fish'
