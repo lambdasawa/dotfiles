@@ -95,6 +95,7 @@ setup-brew() {
         jq \
         yq \
         jless \
+        jnv \
         gron \
         jc \
         pup \
