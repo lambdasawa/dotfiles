@@ -202,7 +202,7 @@ if status is-interactive
     alias ,grebase 'git fetch origin $(basename $(git symbolic-ref refs/remotes/origin/HEAD)) && git rebase origin'
     alias ,gignore 'curl -sSL https://raw.githubusercontent.com/github/gitignore/main/$(curl -sSL "https://api.github.com/repos/github/gitignore/git/trees/main" | jq -r ".tree[] .path" | grep .gitignore | sk)'
 
-    alias ip-local 'jc ifconfig | jq -r ".[] | [.name, .ipv4_addr] | @csv" | csview -H'
+    alias ip-local 'jc ifconfig | jq -r ".[] | [.name, .ipv4_addr] | @csv" | jc ifconfig | jq -r ".[] | [.name, .ipv4_addr] | @csv" | qsv table'
     alias ip-global 'curl -sSL https://checkip.amazonaws.com/'
 
     alias uu uuidgen

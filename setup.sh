@@ -93,6 +93,7 @@ setup-brew() {
         pueue \
         broot \
         sd \
+        choose-rust \
         sk \
         jq \
         yq \
@@ -101,7 +102,7 @@ setup-brew() {
         jc \
         pup \
         mdcat \
-        csview \
+        qsv \
         pandoc \
         graphviz \
         hexyl \
