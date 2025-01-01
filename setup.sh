@@ -67,34 +67,31 @@ setup-brew() {
         google-japanese-ime \
         chatgpt \
         claude \
-        ngrok \
-        mitmproxy
+        ngrok
 
     brew install \
         fish \
+        starship \
         gh \
         ghq \
         lazygit \
-        starship \
-        docker-compose \
+        1password-cli \
+        sk \
+        pueue \
         zoxide \
         mise \
         asdf \
         watchexec \
-        1password-cli \
         eza \
         bat \
-        difftastic \
-        git-delta \
         ripgrep \
         semgrep \
         ast-grep \
+        difftastic \
+        git-delta \
         fd \
-        pueue \
-        broot \
         sd \
         choose-rust \
-        sk \
         jq \
         yq \
         jless \
@@ -105,30 +102,30 @@ setup-brew() {
         qsv \
         pandoc \
         graphviz \
+        openssl \
+        imagemagick \
+        ffmpeg \
+        yt-dlp \
+        mpv \
+        sox \
         hexyl \
         ouch \
         xh \
         dufs \
         k6 \
-        mitmproxy \
-        openvpn \
-        openssl \
+        docker-compose \
         mysql \
         postgresql@14 \
         sqldef/sqldef/mysqldef \
         sqldef/sqldef/psqldef \
         redis \
-        imagemagick \
-        ffmpeg \
-        mpv \
-        sox \
         uv \
         awscli \
         awscurl \
         scrcpy \
         apktool \
         android-commandlinetools \
-        yt-dlp
+        openvpn
 }
 
 if [ "$(uname)" == "Darwin" ]; then
