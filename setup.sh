@@ -117,6 +117,7 @@ setup-brew() {
         sqldef/sqldef/mysqldef \
         sqldef/sqldef/psqldef \
         redis \
+        imagemagick \
         ffmpeg \
         mpv \
         sox \
