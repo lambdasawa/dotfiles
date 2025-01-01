@@ -39,8 +39,17 @@ function ll
     end
 end
 
-function ripgrep-delta
-    rg --json -C 2 $argv | delta
+function rg-delta
+    rg --json --context 10 "$argv" | delta
+end
+
+function rg-sk
+    sk \
+        --tac --no-sort \
+        --ansi \
+        --interactive \
+        --cmd 'rg --color always --line-number "{}"' |
+        choose -f : 0
 end
 
 function cd
@@ -60,6 +69,10 @@ end
 
 function cd-repo
     z $(ghq list -p | sk)
+end
+
+function copy-path
+    realpath $argv | tr -d '\n' | clipboard-copy
 end
 
 function tmp
@@ -140,7 +153,7 @@ if status is-interactive
     alias c 'docker compose'
     alias d docker
     alias e code
-    # alias f ''
+    alias f 'find-in-files'
     alias g lazygit
     # alias h ''
     alias i "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
@@ -150,9 +163,9 @@ if status is-interactive
     alias m mise
     # alias n ''
     # alias o ''
-    alias p realpath
+    alias p copy-path
     # alias q ''
-    alias r ripgrep-delta
+    alias r 'rg-delta'
     # alias s ''
     # alias t ''
     # alias u ''
@@ -162,53 +175,43 @@ if status is-interactive
     # alias y ''
     # alias z zoxide
 
-    alias tree 'eza --tree --all --git-ignore'
-
-    alias today 'date "+%Y-%m-%d"'
-    alias now 'date "+%Y-%m-%d-%H-%M-%S"'
-
     alias ca 'code -a .'
     alias cr 'code -r .'
 
-    alias ce 'docker compose exec'
-
     alias mr 'mise run'
     alias mw 'mise watch -t'
-    alias mise-init 'cp ~/dotfiles/mise/config.toml .mise.toml && code .mise.toml'
 
-    alias nr 'npm run'
+    alias , 'mkdir-cd'
+    alias ,r 'cd-repo'
+    alias ,t 'eza --tree --all --git-ignore | bat'
+    alias ,c 'clipboard-copy'
+    alias ,v 'clipboard-paste'
 
-    alias , mkdir-cd
-    alias ,r cd-repo
-    alias ,c clipboard-copy
-    alias ,v clipboard-paste
+    alias branch 'git branch --format="%(refname:short)" | sk'
+    alias reflog 'git reflog | sk | choose 0'
+    alias current-branch 'git rev-parse --abbrev-ref HEAD'
+    alias default-branch 'basename $(git symbolic-ref refs/remotes/origin/HEAD)'
+    alias git-top 'git rev-parse --show-toplevel'
 
-    alias gg 'ghq get --parallel --shallow --no-recursive'
-    alias ,gl 'git log -p'
-    alias ,gs 'git switch'
-    alias ,gsc 'git switch -C'
-    alias ,ga 'git add .'
-    alias ,gap 'git add -p'
-    alias ,gs "git stash"
-    alias ,gc 'git commit -v'
-    alias ,gP 'git push'
-    alias ,gp 'git pull'
-    alias ,gbranch 'git branch --format="%(refname:short)" | sk'
-    alias ,greflog 'git reflog | sk | awk "{print \$1}"'
-    alias ,groot 'git rev-parse --show-toplevel'
-    alias ,gtop 'git rev-parse --show-toplevel'
-    alias ,gcurrent-branch 'git rev-parse --abbrev-ref HEAD'
-    alias ,gdefault-branch 'basename $(git symbolic-ref refs/remotes/origin/HEAD)'
-    alias ,grebase 'git fetch origin $(basename $(git symbolic-ref refs/remotes/origin/HEAD)) && git rebase origin'
-    alias ,gignore 'curl -sSL https://raw.githubusercontent.com/github/gitignore/main/$(curl -sSL "https://api.github.com/repos/github/gitignore/git/trees/main" | jq -r ".tree[] .path" | grep .gitignore | sk)'
+    alias ymd 'date "+%Y-%m-%d"'
+    alias ymdhms 'date "+%Y-%m-%d-%H-%M-%S"'
+    alias nowz 'TZ=UTC date "+%Y-%m-%dT%H:%M:%SZ"'
+    alias nowj 'TZ=Asia/Tokyo date "+%Y-%m-%dT%H:%M:%S+09:00"'
 
-    alias ip-local 'jc ifconfig | jq -r ".[] | [.name, .ipv4_addr] | @csv" | jc ifconfig | jq -r ".[] | [.name, .ipv4_addr] | @csv" | qsv table'
+    alias ip-local 'jc ifconfig | jq -r \'[["name", "addr"]] + map([.name, .ipv4_addr]) | .[] |  @csv\' | qsv table'
     alias ip-global 'curl -sSL https://checkip.amazonaws.com/'
 
     alias uu uuidgen
-    alias random-alnum 'cat /dev/urandom | LC_ALL=C tr -dc A-Za-z0-9 | head -c 32'
-    alias random-ascii 'cat /dev/urandom | LC_ALL=C tr -dc "[:print:]" | head -c 32'
+    alias random-alnum 'cat /dev/urandom | LC_ALL=C tr -dc A-Za-z0-9 | head -c 64'
+    alias random-ascii 'cat /dev/urandom | LC_ALL=C tr -dc "[:print:]" | head -c 64'
 
     alias md mdcat
-    alias csv csview
+    alias csv 'qsv table'
+
+    alias json-to-yaml 'yq --input-format json --output-format yaml'
+    alias yaml-to-json 'yq --input-format yaml --output-format json'
+    alias csv-to-json 'jc --csv'
+    alias xml-to-json 'jc --xml'
+    alias toml-to-json 'jc --toml'
+    alias html-to-json 'pup "json{}"'
 end
