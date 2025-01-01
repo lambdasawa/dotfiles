@@ -1,4 +1,3 @@
-# mise install
 [tools]
 terraform = "1.10.3"
 dotnet = "9.0.101"
@@ -14,27 +13,3 @@ java = "23.0.1"
 
 [settings]
 experimental = true
-
-## cp .env.example .env
-## touch .envrc.sh
-## mkdir bin/
-## mise trust
-# [env]
-# HOGE = 'fuga'
-# GIT_SHA = "{{exec(command='git rev-parse HEAD')}}"
-# _.file = '.env'
-# _.source = ".envrc.sh"
-# _.path = ["./bin"]
-# _.python.venv = { path = ".venv", create = true }
-
-## mise run
-# [tasks.default]
-# run = """
-# echo "Hello, mise tasks.default!"
-# """
-
-## mise run exec
-## mise watch -t exec
-# [tasks.exec]
-# sources = ['**/*.py']
-# run = "python main.py"
