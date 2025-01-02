@@ -153,10 +153,10 @@ if status is-interactive
     alias c 'docker compose'
     alias d docker
     alias e code
-    alias f 'find-in-files'
+    alias f find-in-files
     alias g lazygit
     # alias h ''
-    alias i "sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
+    alias i rg-sk
     alias j jless
     # alias k ''
     alias l ll
@@ -165,7 +165,7 @@ if status is-interactive
     # alias o ''
     alias p copy-path
     # alias q ''
-    alias r 'rg-delta'
+    alias r rg-delta
     # alias s ''
     # alias t ''
     # alias u ''
@@ -181,11 +181,11 @@ if status is-interactive
     alias mr 'mise run'
     alias mw 'mise watch -t'
 
-    alias , 'mkdir-cd'
-    alias ,r 'cd-repo'
+    alias , mkdir-cd
+    alias ,r cd-repo
     alias ,t 'eza --tree --all --git-ignore | bat'
-    alias ,c 'clipboard-copy'
-    alias ,v 'clipboard-paste'
+    alias ,c clipboard-copy
+    alias ,v clipboard-paste
 
     alias branch 'git branch --format="%(refname:short)" | sk'
     alias reflog 'git reflog | sk | choose 0'
