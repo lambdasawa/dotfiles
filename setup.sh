@@ -126,7 +126,8 @@ setup-brew() {
         scrcpy \
         apktool \
         android-commandlinetools \
-        openvpn
+        openvpn \
+        cloudflared
 }
 
 if [ "$(uname)" == "Darwin" ]; then
