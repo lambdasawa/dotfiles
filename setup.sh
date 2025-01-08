@@ -66,8 +66,7 @@ setup-brew() {
         slack \
         google-japanese-ime \
         chatgpt \
-        claude \
-        ngrok
+        claude
 
     brew install \
         fish \
