@@ -168,7 +168,7 @@ if status is-interactive
     alias r 'rg-delta'
     # alias s ''
     # alias t ''
-    # alias u ''
+    alias u cursor
     # alias v ''
     alias w watchexec
     alias x xargs
