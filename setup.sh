@@ -125,6 +125,7 @@ setup-brew() {
         scrcpy \
         apktool \
         android-commandlinetools \
+        dotnet \
         openvpn \
         cloudflared
 }

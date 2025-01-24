@@ -141,6 +141,11 @@ if status is-interactive
     fish_add_path "$HOME/Library/Android/sdk/platform-tools"
     fish_add_path "$HOME/Library/Android/sdk/tools/bin"
     fish_add_path $(find $HOME/Library/Android/sdk/build-tools -type d -maxdepth 1 -mindepth 1 2>/dev/null | sort | tail -n1)
+    fish_add_path "$HOME/.dotnet/tools"
+
+    if [ -e /opt/homebrew/opt/dotnet/libexec ]
+        set -gx DOTNET_ROOT "/opt/homebrew/opt/dotnet/libexec"
+    end
 
     if which code >/dev/null 2>&1
         set -gx EDITOR "code --wait"
