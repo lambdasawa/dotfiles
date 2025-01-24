@@ -98,14 +98,6 @@ function clipboard-paste
     end
 end
 
-function mise-upgrade
-    mise upgrade
-    for l in (cat ~/.config/mise/config.toml | jc --toml | jq -r '.tools | to_entries[] | .key')
-        mise install "$l@latest"
-        mise global --pin "$l@latest"
-    end
-end
-
 function kill-ds-store
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
     killall Finder
