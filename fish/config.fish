@@ -175,6 +175,9 @@ if status is-interactive
     alias ca 'code -a .'
     alias cr 'code -r .'
 
+    alias ua 'cursor -a .'
+    alias ur 'cursor -r .'
+
     alias mr 'mise run'
     alias mw 'mise watch -t'
 
