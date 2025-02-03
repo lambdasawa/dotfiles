@@ -127,7 +127,8 @@ setup-brew() {
         android-commandlinetools \
         dotnet \
         openvpn \
-        cloudflared
+        cloudflared \
+        maccy
 }
 
 if [ "$(uname)" == "Darwin" ]; then
