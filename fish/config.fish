@@ -76,7 +76,8 @@ function copy-path
 end
 
 function tmp
-    set dir $(mktemp -d)
+    set dir ~/tmp/$(date "+%Y%m%d%H%M%S")
+    mkdir -p $dir
     wezterm cli spawn --cwd "$dir"
 end
 
