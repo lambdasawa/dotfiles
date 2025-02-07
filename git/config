@@ -14,7 +14,7 @@ verbose = true
 gpgsign = true
 
 [core]
-editor = code --wait
+editor = code-insiders --wait
 pager = delta
 
 [init]
