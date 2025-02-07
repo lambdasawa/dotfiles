@@ -57,16 +57,16 @@ setup-brew() {
         firefox \
         google-chrome \
         wezterm \
-        visual-studio-code \
+        visual-studio-code@insiders \
         aws-vault \
         session-manager-plugin \
         google-cloud-sdk \
         jetbrains-toolbox \
         raycast \
+        maccy \
         slack \
         google-japanese-ime \
-        chatgpt \
-        claude
+        chatgpt
 
     brew install \
         fish \
