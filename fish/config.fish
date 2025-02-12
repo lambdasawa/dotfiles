@@ -142,6 +142,7 @@ if status is-interactive
 
     if which code-insiders >/dev/null 2>&1
         set -gx EDITOR "code-insiders --wait"
+        set -gx SARIFW_EDITOR "code-insiders"
     else if which vim >/dev/null 2>&1
         set -gx EDITOR vim
     end
