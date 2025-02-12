@@ -66,7 +66,9 @@ setup-brew() {
         maccy \
         slack \
         google-japanese-ime \
-        chatgpt
+        chatgpt \
+        burp-suite-professional \
+        caido
 
     brew install \
         fish \
