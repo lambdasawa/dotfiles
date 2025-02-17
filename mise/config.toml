@@ -1,15 +1,17 @@
 [tools]
 terraform = "1.10.5"
-dotnet = "9.0.102"
+dotnet = "9.0.200"
 rust = "1.84.1"
-dart = "3.6.2"
-flutter = "3.27.3-stable"
+dart = "3.7.0"
+flutter = "3.29.0-stable"
 python = "3.13.1"
-ruby = "3.4.1"
-node = "23.7.0"
-go = "1.23.5"
+ruby = "3.4.2"
+node = "23.8.0"
+go = "1.24.0"
 gradle = "8.12"
-java = "23.0.2"
+java = "24.0.0"
+deno = "2.1.10"
+bun = "1.2.2"
 
 [settings]
 experimental = true
