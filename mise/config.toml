@@ -1,17 +1,17 @@
 [tools]
 terraform = "1.10.5"
 dotnet = "9.0.200"
-rust = "1.84.1"
+rust = "1.85.0"
 dart = "3.7.0"
 flutter = "3.29.0-stable"
 python = "3.13.2"
 ruby = "3.4.2"
 node = "23.8.0"
 go = "1.24.0"
-gradle = "8.12"
+gradle = "8.13"
 java = "24.0.0"
-deno = "2.1.10"
-bun = "1.2.2"
+deno = "2.2.2"
+bun = "1.2.3"
 zig = "0.13.0"
 
 [settings]
