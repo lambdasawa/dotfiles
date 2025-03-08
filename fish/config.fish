@@ -163,7 +163,7 @@ if status is-interactive
     # alias n ''
     # alias o ''
     alias p copy-path
-    # alias q ''
+    alias q pueue
     alias r 'rg-delta'
     # alias s ''
     # alias t ''
