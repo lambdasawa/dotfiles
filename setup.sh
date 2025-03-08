@@ -102,6 +102,7 @@ setup-brew() {
         pup \
         mdcat \
         qsv \
+        dsq \
         pandoc \
         graphviz \
         openssl \
