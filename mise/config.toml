@@ -1,18 +1,18 @@
 [tools]
-terraform = "1.10.5"
+terraform = "1.11.1"
 dotnet = "9.0.200"
 rust = "1.85.0"
-dart = "3.7.0"
-flutter = "3.29.0-stable"
+dart = "3.7.1"
+flutter = "3.29.1-stable"
 python = "3.13.2"
 ruby = "3.4.2"
-node = "23.8.0"
-go = "1.24.0"
+node = "23.9.0"
+go = "1.24.1"
 gradle = "8.13"
 java = "24.0.0"
-deno = "2.2.2"
-bun = "1.2.3"
-zig = "0.13.0"
+deno = "2.2.3"
+bun = "1.2.4"
+zig = "0.14.0"
 
 [settings]
 experimental = true
