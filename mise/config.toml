@@ -1,6 +1,6 @@
 [tools]
 terraform = "1.11.2"
-dotnet = "9.0.201"
+dotnet = "9.0.202"
 rust = "1.85.0"
 dart = "3.7.2"
 flutter = "3.29.2-stable"
@@ -10,7 +10,7 @@ node = "23.10.0"
 go = "1.24.1"
 gradle = "8.13"
 java = "24.0.0"
-deno = "2.2.3"
+deno = "2.2.4"
 bun = "1.2.5"
 zig = "0.14.0"
 
