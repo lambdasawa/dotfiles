@@ -1,7 +1,7 @@
 [tools]
 terraform = "1.11.2"
 dotnet = "9.0.202"
-rust = "1.85.0"
+rust = "1.85.1"
 dart = "3.7.2"
 flutter = "3.29.2-stable"
 python = "3.13.2"
