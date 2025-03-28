@@ -11,9 +11,11 @@ config.colors = {
   tab_bar = {
     active_tab = {
       fg_color = "#202020",
-      bg_color = "#ff8c01"
+      bg_color = "#bf65e8"
     }
-  }
+  },
+  cursor_bg = "#bf65e8",
+  cursor_fg = "#202020"
 }
 
 -- keyboard
