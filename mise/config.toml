@@ -1,5 +1,5 @@
 [tools]
-terraform = "1.11.2"
+terraform = "1.11.3"
 dotnet = "9.0.202"
 rust = "1.85.1"
 dart = "3.7.2"
@@ -10,8 +10,8 @@ node = "23.10.0"
 go = "1.24.1"
 gradle = "8.13"
 java = "24.0.0"
-deno = "2.2.4"
-bun = "1.2.5"
+deno = "2.2.6"
+bun = "1.2.7"
 zig = "0.14.0"
 
 [settings]
