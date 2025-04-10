@@ -63,7 +63,6 @@ setup-brew() {
         google-cloud-sdk \
         jetbrains-toolbox \
         raycast \
-        maccy \
         slack \
         google-japanese-ime \
         chatgpt \
@@ -130,8 +129,7 @@ setup-brew() {
         android-commandlinetools \
         dotnet \
         openvpn \
-        cloudflared \
-        maccy
+        cloudflared
 }
 
 if [ "$(uname)" == "Darwin" ]; then
