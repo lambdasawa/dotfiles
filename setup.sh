@@ -58,14 +58,17 @@ setup-brew() {
         google-chrome \
         wezterm \
         visual-studio-code@insiders \
+        cursor \
         aws-vault \
         session-manager-plugin \
         google-cloud-sdk \
         jetbrains-toolbox \
         raycast \
         slack \
+        discord \
         google-japanese-ime \
         chatgpt \
+        claude \
         burp-suite-professional \
         caido
 
