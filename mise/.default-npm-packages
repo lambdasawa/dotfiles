@@ -4,3 +4,4 @@ textlint
 @biomejs/biome
 prettier
 vite
+@anthropic-ai/claude-code
