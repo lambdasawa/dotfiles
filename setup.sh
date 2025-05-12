@@ -64,8 +64,6 @@ setup-brew() {
         google-cloud-sdk \
         jetbrains-toolbox \
         raycast \
-        slack \
-        discord \
         google-japanese-ime \
         chatgpt \
         claude \
