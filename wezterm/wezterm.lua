@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local config = {}
 
 -- appearance
-config.font_rules = wezterm.font_with_fallback({
+config.font = wezterm.font_with_fallback({
   "JetBrains Mono",
   "Hiragino Sans",
 })
