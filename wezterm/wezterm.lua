@@ -2,7 +2,11 @@ local wezterm = require 'wezterm'
 local config = {}
 
 -- appearance
-config.font = wezterm.font 'JetBrains Mono'
+config.font_rules = wezterm.font_with_fallback({
+  "JetBrains Mono",
+  "Hiragino Sans",
+})
+
 config.font_size = 10
 config.color_scheme = 'Monokai Remastered'
 config.window_background_opacity = 0.9
