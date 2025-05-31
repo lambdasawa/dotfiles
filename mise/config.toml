@@ -2,17 +2,17 @@
 terraform = "1.12.1"
 dotnet = "9.0.300"
 rust = "1.87.0"
-dart = "3.8.0"
-flutter = "3.32.0-stable"
+dart = "3.8.1"
+flutter = "3.32.1-stable"
 python = "3.13.3"
 ruby = "3.4.4"
 node = "24.1.0"
 go = "1.24.3"
 gradle = "8.14"
 java = "24.0.1"
-deno = "2.3.3"
-bun = "1.2.14"
-zig = "0.14.0"
+deno = "2.3.5"
+bun = "1.2.15"
+zig = "2024.11.0"
 
 [settings]
 experimental = true
