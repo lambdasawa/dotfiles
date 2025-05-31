@@ -140,9 +140,8 @@ if status is-interactive
         set -gx DOTNET_ROOT "/opt/homebrew/opt/dotnet/libexec"
     end
 
-    if which code-insiders >/dev/null 2>&1
-        set -gx EDITOR "code-insiders --wait"
-        set -gx SARIFW_EDITOR "code-insiders"
+    if which code >/dev/null 2>&1
+        set -gx EDITOR "code --wait"
     else if which vim >/dev/null 2>&1
         set -gx EDITOR vim
     end
@@ -151,7 +150,7 @@ if status is-interactive
     alias b bat
     alias c 'docker compose'
     alias d docker
-    alias e code-insiders
+    alias e code
     alias f 'find-in-files'
     alias g lazygit
     # alias h ''
@@ -174,8 +173,8 @@ if status is-interactive
     # alias y ''
     # alias z zoxide
 
-    alias ca 'code-insiders -a .'
-    alias cr 'code-insiders -r .'
+    alias ca 'code -a .'
+    alias cr 'code -r .'
 
     alias ua 'cursor -a .'
     alias ur 'cursor -r .'

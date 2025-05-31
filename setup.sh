@@ -54,21 +54,17 @@ setup-brew() {
 
     brew install --cask \
         1password \
+        raycast \
         firefox \
         google-chrome \
         wezterm \
-        visual-studio-code@insiders \
-        cursor \
-        aws-vault \
-        session-manager-plugin \
-        google-cloud-sdk \
+        visual-studio-code \
         jetbrains-toolbox \
-        raycast \
-        google-japanese-ime \
-        chatgpt \
-        claude \
+        caido \
         burp-suite-professional \
-        caido
+        google-cloud-sdk \
+        session-manager-plugin \
+        google-japanese-ime
 
     brew install \
         fish \
