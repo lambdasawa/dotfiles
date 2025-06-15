@@ -3,5 +3,6 @@ pnpm
 textlint
 @biomejs/biome
 prettier
+tsx
 vite
 @anthropic-ai/claude-code
